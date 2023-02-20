@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1673431334 source:d:\_documente_rares\desktop\semester 1\c programming\assignments\assignment 2\exercise_1\assignment2_ex1_method2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+

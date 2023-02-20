@@ -1,0 +1,72 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern fopen
+     8                                  import fopen msvcrt.dll
+     9                                  extern fgets
+    10                                  import fgets msvcrt.dll
+    11                                  extern fputs
+    12                                  import fputs msvcrt.dll
+    13                                  extern fclose
+    14                                  import fclose msvcrt.dll
+    15                                  extern scanf
+    16                                  import scanf msvcrt.dll
+    17                                  extern printf
+    18                                  import printf msvcrt.dll
+    19                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    20                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    21                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    22                                  ;Read a file name and a text from the keyboard. Create a file with that name in the current folder and write the text that has been read to file. Observations: The file name has maximum 30 characters. The text has m
+    23                                  ; our data is declared here (the variables needed by our program)
+    24                                  segment data use32 class=data
+    25                                      ; ...
+    26 00000000 <res 0000001E>              file_name resb 30
+    27 0000001E <res 00000078>              content resb 120
+    28 00000096 257300                      format db "%s", 0
+    29 00000099 7700                        access_mode db "w", 0
+    30 0000009B 00000000                    file_descriptor dd 0e
+    31 0000009F 46696C65206E6F7420-         error_message db "File not opened", 0
+    31 000000A8 6F70656E656400     
+    32                                  ; our code starts here
+    33                                  segment code use32 class=code
+    34                                      start:
+    35                                          ; ...
+    36 00000000 68[00000000]                    push dword file_name
+    37 00000005 68[96000000]                    push dword format
+    38 0000000A FF15[00000000]                  call [scanf]
+    39 00000010 83C408                          add esp, 4*2
+    40                                          
+    41 00000013 68[99000000]                    push dword access_mode
+    42 00000018 FF35[00000000]                  push dword [file_name]
+    43 0000001E FF15[00000000]                  call [fopen]
+    44 00000024 83C408                          add esp, 4*2
+    45                                          
+    46 00000027 A3[9B000000]                    mov [file_descriptor], eax
+    47 0000002C 83F800                          cmp eax, 0
+    48 0000002F 743C                            jz pre_final
+    49                                          
+    50 00000031 68[1E000000]                    push dword content
+    51 00000036 68[96000000]                    push dword format
+    52 0000003B FF15[00000000]                  call [scanf]
+    53 00000041 83C408                          add esp, 4*2
+    54                                          
+    55 00000044 FF35[9B000000]                  push dword [file_descriptor]
+    56 0000004A FF35[1E000000]                  push dword [content]
+    57 00000050 FF15[00000000]                  call [fputs]
+    58 00000056 83C408                          add esp, 4*2
+    59                                          
+    60                                      final:
+    61 00000059 FF35[9B000000]                  push dword [file_descriptor]
+    62 0000005F FF15[00000000]                  call [fclose]    
+    63                                          ; exit(0)
+    64 00000065 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    65 00000067 FF15[00000000]                  call    [exit]       ; call exit to terminate the program
+    66                                      pre_final:
+    67 0000006D 68[9F000000]                    push error_message
+    68 00000072 68[96000000]                    push format
+    69 00000077 FF15[00000000]                  call[printf]
+    70 0000007D 83C408                          add esp, 4*2
+    71 00000080 EBD7                            jmp final

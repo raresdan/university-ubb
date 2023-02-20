@@ -1,0 +1,123 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern strlen
+     8                                  import strlen msvcrt.dll
+     9                                  extern fclose
+    10                                  import fclose msvcrt.dll
+    11                                  extern fprintf
+    12                                  import fprintf msvcrt.dll
+    13                                  extern fopen
+    14                                  import fopen msvcrt.dll
+    15                                  extern printf
+    16                                  import printf msvcrt.dll
+    17                                  extern scanf
+    18                                  import scanf msvcrt.dll
+    19                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    20                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    21                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    22                                  
+    23                                  ;Sa se citeasca de la tastatura un numar n, apoi sa se citeasca mai multe cuvinte, pana cand se citeste cuvantul/caracterul "#". 
+    24                                  ;Sa se scrie intr-un fisier text toate cuvintele citite care incep si se termina cu aceeasi litera si au cel putin n litere.
+    25                                  
+    26                                  ; our data is declared here (the variables needed by our program)
+    27                                  segment data use32 class=data
+    28                                      ; ...
+    29 00000000 6F75747075742E7478-         filename dd "output.txt", 0
+    29 00000009 74000000000000     
+    30 00000010 7700000000000000            access_mode dd 'w', 0
+    31 00000018 FFFFFFFF                    file_descriptor dd -1
+    32 0000001C 256400                      format_d db "%d", 0
+    33 0000001F 257300                      format_s db "%s", 0
+    34 00000022 25732000                    format_s2 db "%s ", 0
+    35 00000026 23000000                    ending dd '#'
+    36 0000002A 00000000                    n dd 0
+    37 0000002E <res 00000190>              string resd 100
+    38                                  ; our code starts here
+    39                                  segment code use32 class=code
+    40                                      start:
+    41                                          ; ...
+    42                                          ;reading the number n
+    43 00000000 68[2A000000]                    push dword n
+    44 00000005 68[1C000000]                    push dword format_d
+    45 0000000A FF15[00000000]                  call [scanf]
+    46 00000010 83C408                          add esp, 4*2
+    47                                          
+    48                                          ;opening the output file
+    49 00000013 68[10000000]                    push dword access_mode     
+    50 00000018 68[00000000]                    push dword filename
+    51 0000001D FF15[00000000]                  call [fopen]
+    52 00000023 83C408                          add esp, 4*2               
+    53                                          
+    54                                          ;saving the file descriptor
+    55 00000026 A3[18000000]                    mov [file_descriptor], eax  
+    56                                          
+    57                                          ; check if the file was opened correctly
+    58 0000002B 83F800                          cmp eax, 0
+    59 0000002E 0F848B000000                    jz final
+    60                                          
+    61                                      read_strings:
+    62                                          ;read a new string from the keyboard
+    63 00000034 68[2E000000]                    push dword string
+    64 00000039 68[1F000000]                    push dword format_s
+    65 0000003E FF15[00000000]                  call [scanf]
+    66 00000044 83C408                          add esp, 4*2
+    67                                          
+    68                                          ;compare if the last input string was equal to '#' so the programm can end
+    69 00000047 BE[2E000000]                    mov esi, string
+    70 0000004C BF[26000000]                    mov edi, ending
+    71                                          compare:
+    72 00000051 A6                                  cmpsb
+    73 00000052 750C                                jnz process_string
+    74 00000054 803F00                              cmp byte [edi], 0   ; check for the null terminator
+    75 00000057 7402                                je pre_final
+    76 00000059 EBF6                                jmp compare
+    77                                          pre_final:
+    78 0000005B 803E00                              cmp byte [esi], 0   ; check for the null terminator
+    79 0000005E 745F                                je final
+    80                                          process_string:
+    81                                              ;verify if the length of the input string is greater than the number n
+    82 00000060 68[2E000000]                        push dword string
+    83 00000065 FF15[00000000]                      call [strlen]
+    84 0000006B 83C404                              add esp, 4
+    85 0000006E 3B05[2A000000]                      cmp eax, [n]
+    86 00000074 7C38                                jl next
+    87                                              
+    88                                              ;check if the first and the last (the one before null) characters are equal 
+    89 00000076 BE[2E000000]                        mov esi, string
+    90 0000007B 8A06                                mov al, [esi]   ; saving the first character
+    91 0000007D 89F2                                mov edx, esi    ; saving a copy of the string 
+    92 0000007F BB00000000                          mov ebx, 0      ; counting the characters
+    93                                              find_null:
+    94                                                  ; comparing the charcaters untill we find the null terminator
+    95 00000084 803C1A00                                cmp byte [edx + ebx], 0 
+    96 00000088 7502                                    jne not_found
+    97 0000008A EB03                                    jmp found
+    98                                              not_found:
+    99 0000008C 43                                      inc ebx
+   100 0000008D EBF5                                    jmp find_null
+   101                                              found:
+   102 0000008F 3A441AFF                                cmp al, [edx + ebx - 1] ;
+   103 00000093 7519                                    jne next 
+   104                                              print_to_file:
+   105                                                  ; printing to the file the strings that respect both conditions
+   106 00000095 68[2E000000]                            push dword string
+   107 0000009A 68[22000000]                            push dword format_s2
+   108 0000009F FF35[18000000]                          push dword [file_descriptor]
+   109 000000A5 FF15[00000000]                          call [fprintf]
+   110 000000AB 83C40C                                  add esp, 4*3
+   111                                          next:    
+   112 000000AE EB84                            jmp read_strings
+   113                                          
+   114                                          ; closing the file
+   115 000000B0 FF35[18000000]                  push dword [file_descriptor]
+   116 000000B6 FF15[00000000]                  call [fclose]
+   117 000000BC 83C404                          add esp, 4
+   118                                          
+   119                                      final: 
+   120                                          ; exit(0)
+   121 000000BF 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+   122 000000C1 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

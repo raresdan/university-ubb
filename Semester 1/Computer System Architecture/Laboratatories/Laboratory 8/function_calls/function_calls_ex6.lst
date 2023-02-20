@@ -1,0 +1,59 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  extern printf
+    11                                  import printf msvcrt.dll
+    12                                                            
+    13                                  ;Two natural numbers a and b (a: dword, b: dword, defined in the data segment) are given. Calculate a/b and display the quotient in the following format: "<a>/<b> = <quotient>". Example: for a = 200, b = 5 it will d
+    14                                  ;The values will be displayed in decimal format (base 10) with sign.
+    15                                  
+    16                                  ; our data is declared here (the variables needed by our program)
+    17                                  segment data use32 class=data
+    18                                      ; ...
+    19 00000000 25642000                    format1 db "%d ", 0
+    20 00000004 25632000                    format2 db "%c ", 0
+    21 00000008 C8000000                    a dd 200d
+    22 0000000C 05000000                    b dd 5d
+    23 00000010 2F000000                    c dd '/'
+    24 00000014 3D000000                    d dd '='
+    25                                  ; our code starts here
+    26                                  segment code use32 class=code
+    27                                      start:
+    28                                          ; ...
+    29 00000000 FF35[08000000]              push dword [a]
+    30 00000006 68[00000000]                push dword format1
+    31 0000000B FF15[00000000]              call [printf]
+    32 00000011 83C408                      add esp, 4*2
+    33                                      
+    34 00000014 FF35[10000000]              push dword [c]
+    35 0000001A 68[04000000]                push dword format2
+    36 0000001F FF15[00000000]              call [printf]
+    37 00000025 83C408                      add esp, 4*2
+    38                                      
+    39 00000028 FF35[0C000000]              push dword [b]
+    40 0000002E 68[00000000]                push dword format1
+    41 00000033 FF15[00000000]              call [printf]
+    42 00000039 83C408                      add esp, 4*2
+    43                                      
+    44 0000003C FF35[14000000]              push dword [d]
+    45 00000042 68[04000000]                push dword format2
+    46 00000047 FF15[00000000]              call [printf]
+    47 0000004D 83C408                      add esp, 4*2
+    48                                      
+    49 00000050 A1[08000000]                mov eax, [a]
+    50 00000055 F735[0C000000]              div dword [b] ; ax = a/b
+    51                                      
+    52 0000005B 50                          push eax
+    53 0000005C 68[00000000]                push dword format1
+    54 00000061 FF15[00000000]              call [printf]
+    55 00000067 83C408                      add esp, 4*2
+    56                                     
+    57                                          ; exit(0)
+    58 0000006A 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    59 0000006C FF15[00000000]                  call    [exit]       ; call exit to terminate the program

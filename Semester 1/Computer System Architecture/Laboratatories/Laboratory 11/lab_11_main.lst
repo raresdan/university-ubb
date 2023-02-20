@@ -1,0 +1,77 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  ;extern concatenate
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit
+     8                                  extern strlen
+     9                                  extern scanf                ; tell nasm that exit exists even if we won't be defining it
+    10                                  import exit msvcrt.dll      ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    11                                  import scanf msvcrt.dll     ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    12                                  import strlen msvcrt.dll
+    13                                  ; our data is declared here (the variables needed by our program)
+    14                                  segment data use32 class=data
+    15                                      ; ...
+    16 00000000 257300                      format db "%s", 0
+    17 00000003 <res 00000004>              a resd 1
+    18 00000007 <res 00000004>              b resd 1
+    19 0000000B <res 00000004>              c resd 1
+    20 0000000F <res 00000004>              la resd 1
+    21 00000013 <res 00000004>              lb resd 1
+    22 00000017 <res 00000004>              lc resd 1
+    23 0000001B <res 00000190>              result resd 100
+    24                                  ; our code starts here
+    25                                  segment code use32 class=code
+    26                                      start:
+    27                                          ; ...
+    28                                          ;Read the first string
+    29 00000000 68[03000000]                    push dword a
+    30 00000005 68[00000000]                    push format
+    31 0000000A FF15[00000000]                  call [scanf]
+    32 00000010 83C408                          add esp, 4*2
+    33                                          
+    34                                          ;Compute the length of the first string
+    35 00000013 68[03000000]                    push dword a
+    36 00000018 FF15[00000000]                  call [strlen]
+    37 0000001E 83C404                          add esp, 4*1
+    38 00000021 A3[0F000000]                    mov [la], eax
+    39                                          
+    40                                          ;Read the second string
+    41 00000026 68[07000000]                    push dword b
+    42 0000002B 68[00000000]                    push format
+    43 00000030 FF15[00000000]                  call [scanf]
+    44 00000036 83C408                          add esp, 4*2
+    45                                          
+    46                                          ;Compute the length of the second string
+    47 00000039 68[07000000]                    push dword b
+    48 0000003E FF15[00000000]                  call [strlen]
+    49 00000044 83C404                          add esp, 4*1
+    50 00000047 A3[13000000]                    mov [lb], eax
+    51                                          
+    52                                          ;Read the third string
+    53 0000004C 68[0B000000]                    push dword c
+    54 00000051 68[00000000]                    push format
+    55 00000056 FF15[00000000]                  call [scanf]
+    56 0000005C 83C408                          add esp, 4*2
+    57                                          
+    58                                          ;Compute the length of the third string
+    59 0000005F 68[0B000000]                    push dword c
+    60 00000064 FF15[00000000]                  call [strlen]
+    61 0000006A 83C404                          add esp, 4*1
+    62 0000006D A3[17000000]                    mov [lc], eax
+    63                                          
+    64 00000072 68[17000000]                    push dword lc
+    65 00000077 68[13000000]                    push dword lb
+    66 0000007C 68[0F000000]                    push dword la
+    67 00000081 68[0B000000]                    push dword c
+    68 00000086 68[07000000]                    push dword b
+    69 0000008B 68[03000000]                    push dword a
+    70 00000090 68[1B000000]                    push dword result
+    71                                          ;call concatenate
+    72 00000095 83C41C                          add esp, 4*7
+    73                                          
+    74                                          
+    75                                          ; exit(0)
+    76 00000098 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    77 0000009A FF15[00000000]                  call    [exit]       ; call exit to terminate the program

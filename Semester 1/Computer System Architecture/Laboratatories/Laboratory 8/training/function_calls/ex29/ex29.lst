@@ -1,0 +1,65 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern scanf
+     8                                  import scanf msvcrt.dll
+     9                                  extern printf
+    10                                  import printf msvcrt.dll
+    11                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    12                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    13                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    14                                  ;Read three numbers a, m and n (a: word, 0 <= m, n <= 15, m > n) from the keyboard. Isolate the bits m-n of a and display the integer represented by those bits in base 16
+    15                                  
+    16                                   
+    17                                  
+    18                                  ; our data is declared here (the variables needed by our program)
+    19                                  segment data use32 class=data
+    20                                      ; ...
+    21 00000000 0000                        a dw 0
+    22 00000002 0000                        n dw 0
+    23 00000004 0000                        m dw 0
+    24 00000006 256400                      format db "%d", 0
+    25 00000009 257800                      format_hex db "%x", 0
+    26                                  ; our code starts here
+    27                                  segment code use32 class=code
+    28                                      start:
+    29                                          ; ...
+    30 00000000 68[00000000]                    push dword a
+    31 00000005 68[06000000]                    push dword format
+    32 0000000A FF15[00000000]                  call [scanf]
+    33 00000010 83C408                          add esp, 4*2
+    34                                          
+    35 00000013 68[02000000]                    push dword n
+    36 00000018 68[06000000]                    push dword format
+    37 0000001D FF15[00000000]                  call [scanf]
+    38 00000023 83C408                          add esp, 4*2
+    39                                          
+    40 00000026 68[04000000]                    push dword m
+    41 0000002B 68[06000000]                    push dword format
+    42 00000030 FF15[00000000]                  call [scanf]
+    43 00000036 83C408                          add esp, 4*2
+    44                                          
+    45 00000039 66A1[00000000]                  mov ax, [a]
+    46 0000003F 8A0D[04000000]                  mov cl, [m]
+    47 00000045 B310                            mov bl, 16
+    48 00000047 28CB                            sub bl, cl
+    49 00000049 88D9                            mov cl, bl
+    50 0000004B FEC1                            inc cl
+    51 0000004D 66D3E0                          shl ax, cl
+    52 00000050 B110                            mov cl, 16
+    53 00000052 2A0D[04000000]                  sub cl, [m]
+    54 00000058 2A0D[02000000]                  sub cl, [n]
+    55 0000005E FEC1                            inc cl
+    56 00000060 66D3E8                          shr ax, cl
+    57 00000063 66A3[00000000]                  mov [a], ax
+    58                                          
+    59 00000069 FF35[00000000]                  push dword [a]
+    60 0000006F 68[09000000]                    push dword format_hex
+    61 00000074 FF15[00000000]                  call [printf]
+    62 0000007A 83C408                          add esp, 4*2
+    63                                           ; exit(0)
+    64 0000007D 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    65 0000007F FF15[00000000]                  call    [exit]       ; call exit to terminate the program

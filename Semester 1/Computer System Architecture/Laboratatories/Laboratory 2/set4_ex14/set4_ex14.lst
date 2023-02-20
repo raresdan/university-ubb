@@ -1,0 +1,37 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ;(d-b*c+b*2)/a=(4-2*3+2*2)/5=(4-6+4)/5=2/5=0
+    12                                                            
+    13                                  ; our data is declared here (the variables needed by our program)
+    14                                  segment data use32 class=data
+    15                                      ; ...
+    16 00000000 05                          a db 5
+    17 00000001 02                          b db 2
+    18 00000002 03                          c db 3
+    19 00000003 0400                        d dw 4
+    20                                      
+    21                                  
+    22                                  ; our code starts here
+    23                                  segment code use32 class=code
+    24                                      start:
+    25                                          ; ...
+    26 00000000 8A1D[01000000]                  mov bl, [b]
+    27 00000006 A0[02000000]                    mov al, [c]
+    28 0000000B F6E3                            mul bl
+    29 0000000D 662905[03000000]                sub [d],ax
+    30 00000014 B002                            mov al, 2
+    31 00000016 F6E3                            mul bl
+    32 00000018 660305[03000000]                add ax, [d]
+    33 0000001F 8A1D[00000000]                  mov bl, [a]
+    34 00000025 F6F3                            div bl
+    35                                          ; exit(0)
+    36 00000027 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    37 00000029 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

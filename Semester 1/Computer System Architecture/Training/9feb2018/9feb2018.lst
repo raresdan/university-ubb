@@ -1,0 +1,66 @@
+     1                                  bits 32
+     2                                  
+     3                                  global start
+     4                                  
+     5                                  extern printf
+     6                                  import printf msvcrt.dll
+     7                                  extern exit
+     8                                  import exit msvcrt.dll
+     9                                  
+    10                                  segment data use32 class=data
+    11 00000000 770000000000000000-         qword_string dq 1110111b, 100000000h, 0ABCD0002E7FCh,5
+    11 00000009 00000001000000FCE7-
+    11 00000012 0200CDAB0000050000-
+    11 0000001B 0000000000         
+    12                                      len equ ($-qword_string)/8
+    13 00000020 <res 00000010>              dword_string resd len
+    14 00000030 00000000                    sum dd 0
+    15 00000034 00000000                    counter dd 0
+    16 00000038 25642000                    format db "%d ",0
+    17                                  segment code use32 class=code
+    18                                      start:
+    19 00000000 FC                              cld
+    20 00000001 BE[00000000]                    mov esi, qword_string
+    21 00000006 BF[20000000]                    mov edi, dword_string
+    22 0000000B B904000000                      mov ecx,len
+    23                                          processing:
+    24 00000010 AD                                  lodsd
+    25 00000011 AD                                  lodsd
+    26 00000012 C705[30000000]0000-                 mov dword[sum],0
+    26 0000001A 0000               
+    27 0000001C C705[34000000]0000-                 mov dword[counter],0
+    27 00000024 0000               
+    28 00000026 89C2                                mov edx,eax
+    29 00000028 51                                  push ecx
+    30 00000029 B920000000                          mov ecx,32
+    31 0000002E F8                                  clc
+    32                                              digits:
+    33 0000002F E345                                    jecxz next
+    34 00000031 49                                      dec ecx
+    35 00000032 D1D8                                    rcr eax, 1
+    36 00000034 720C                                    jc one
+    37 00000036 C705[30000000]0000-                     mov dword[sum],0
+    37 0000003E 0000               
+    38 00000040 EBED                                    jmp digits
+    39                                                  one:
+    40 00000042 FF05[30000000]                              inc dword[sum]
+    41 00000048 833D[30000000]03                            cmp dword[sum],3
+    42 0000004F 7402                                        je rank
+    43 00000051 EBDC                                        jmp digits
+    44                                                      rank:
+    45 00000053 FF05[34000000]                                 inc dword[counter]
+    46 00000059 833D[34000000]02                               cmp dword[counter],2
+    47 00000060 7402                                           je good
+    48 00000062 EBCB                                           jmp digits
+    49                                                              good:
+    50 00000064 89D0                                                    mov eax,edx
+    51 00000066 52                                                      push edx
+    52 00000067 68[38000000]                                            push dword format
+    53 0000006C FF15[00000000]                                          call [printf]
+    54 00000072 83C408                                                  add esp, 4*2
+    55 00000075 AB                                                      stosd                
+    56                                              next:
+    57 00000076 59                                  pop ecx
+    58 00000077 E297                            loop processing
+    59 00000079 FF3500000000                    push dword[0]
+    60 0000007F FF15[00000000]                  call [exit]

@@ -1,0 +1,60 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ;   Given the word A, obtain the integer number n represented on the bits 0-2 of A. 
+    12                                  ;   Then obtain the word B by rotating A n positions to the right. Compute the doubleword C:
+    13                                  ;       *the bits 8-15 of C have the value 0
+    14                                  ;       *the bits 16-23 of C are the same as the bits of 2-9 of B
+    15                                  ;       *the bits 24-31 of C are the same as the bits of 7-14 of A
+    16                                  ;       *the bits 0-7 of C have the value 1
+    17                                  
+    18                                  ; our data is declared here (the variables needed by our program)
+    19                                  segment data use32 class=data
+    20 00000000 5777                        a dw 0111011101010111b
+    21 00000002 00                          n db 0
+    22 00000003 <res 00000002>              b resw 1
+    23 00000005 <res 00000004>              c resd 1
+    24                                  ; our code starts here
+    25                                  segment code use32 class=code
+    26                                      start:
+    27                                          ; ...
+    28 00000000 66A1[00000000]                  mov ax, [a]
+    29 00000006 8B1D[00000000]                  mov ebx, [a]             ; ebx = A
+    30 0000000C 6683E007                        and ax, 0000000000000111b; keeps the positions 0-2 of A
+    31 00000010 A2[02000000]                    mov [n], al ; n=7
+    32 00000015 8A0D[02000000]                  mov cl, [n]
+    33 0000001B D3CB                            ror ebx,  cl              ; ax = B
+    34 0000001D 66A3[03000000]                  mov word [b], ax         ; B = 1010 1110 1110 1110 b
+    35                                          
+    36 00000023 B900000000                      mov ecx, 0  ; 0000 0000 0000 0000 0000 0000 0000 0000b ; Initialising the register where C is going to be computed
+    37 00000028 6689C2                          mov dx, ax
+    38 0000002B B800000000                      mov eax, 0
+    39 00000030 6689D0                          mov ax, dx
+    40                                          
+    41 00000033 25FC030000                      and eax,00000000000000000000001111111100b ; Isolate bits 2-9 of B
+    42 00000038 B10E                            mov cl, 14
+    43 0000003A D3C0                            rol eax, cl                
+    44 0000003C 09C1                            or ecx, eax                                      ;C = 0000 0000 1011 1011 0000 0000 0000 0000b
+    45                                          
+    46 0000003E 81E3807F0000                    and ebx, 00000000000000000111111110000000b;Isolate bits 7-14 of A
+    47 00000044 B111                            mov cl, 17
+    48 00000046 D3C3                            rol ebx, cl             
+    49 00000048 09D9                            or ecx, ebx                                      ;C =1110 1110  1011 1011 0000 0000 0000 0000b
+    50                                          
+    51 0000004A 81C9FF000000                    or ecx, 00000000000000000000000011111111b ;Forcing bits 0-7 to the value 1
+    52                                          
+    53 00000050 81E1FF00FFFF                    and ecx, 11111111111111110000000011111111b;Forcing bits 8-15 to the value 0 (not neccesary because the bits were initialised with 0)
+    54                                            
+    55                                          ;mov doubleword[c], ecx
+    56                                                      
+    57                                          
+    58                                          ; exit(0)
+    59 00000056 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    60 00000058 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

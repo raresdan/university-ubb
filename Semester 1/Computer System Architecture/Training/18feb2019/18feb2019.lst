@@ -1,0 +1,52 @@
+     1                                  bits 32
+     2                                  
+     3                                  global start
+     4                                  
+     5                                  extern printf
+     6                                  import printf msvcrt.dll
+     7                                  extern exit
+     8                                  import exit msvcrt.dll
+     9                                  
+    10                                  segment data use32 class=data
+    11 00000000 785634123456781228-         initial_string dd 12345678h, 12785634h, 1A4D3C28h
+    11 00000009 3C4D1A             
+    12                                      len equ ($-initial_string)/4
+    13 0000000C <res 00000006>              result_string resw len
+    14 00000012 00000000                    count1s dd 0
+    15 00000016 256400                      format db "%d", 0
+    16                                  segment code use32 class=code
+    17                                      start:
+    18 00000000 FC                              cld
+    19 00000001 B903000000                      mov ecx, len
+    20 00000006 BE[00000000]                    mov esi, initial_string
+    21 0000000B BF[0C000000]                    mov edi, result_string
+    22                                          processing:
+    23 00000010 AD                                  lodsd ; we store each dword from the string into eax; increaseas esi with 4; goes to the next dword
+    24 00000011 88E3                                mov bl, ah  ; we save the high part of the low word 
+    25 00000013 C1E818                              shr eax, 24 ; we shift out 24 bits so we keep only the last 8 bits which will remain in al
+    26 00000016 88C7                                mov bh, al; we save the high part of the high word
+    27 00000018 6689D8                              mov ax, bx ;  now the wanted result will be into ax register
+    28 0000001B 66AB                                stosw ; stores a word from ax into edi; increaseas edi with 2 (bytes); next empty position
+    29 0000001D F8                                  clc; we clear the carry flag;  we prepeare to count 1s
+    30 0000001E 51                                  push ecx
+    31 0000001F B910000000                          mov ecx, 16 ; we want to loop 16 times, to check all 16 bits of the current word
+    32                                              count:
+    33 00000024 E310                                    jecxz end_count
+    34 00000026 49                                      dec ecx ; we decrese ecx after each entry in the loop
+    35 00000027 66D1DB                                  rcr bx, 1 ; we use rotate with carry because if will save each bit into the carry flag so we could check it
+    36 0000002A 7202                                    jc increase  ; if CF = 1 we increase counter
+    37 0000002C EBF6                                    jmp count   ; manually loop 16 times
+    38                                              increase:
+    39 0000002E FE05[12000000]                          inc byte [count1s]
+    40 00000034 EBEE                                    jmp count
+    41                                              end_count:
+    42 00000036 59                                      pop ecx       
+    43 00000037 E2D7                            loop processing
+    44                                          ; after this loop, result_string will have all the words respecting the given condition
+    45 00000039 FF35[12000000]                      push dword [count1s]
+    46 0000003F 68[16000000]                        push dword format
+    47 00000044 FF15[00000000]                      call [printf]
+    48 0000004A 83C408                              add esp, 4*2
+    49 0000004D 6A00                            push    dword 0      
+    50 0000004F FF15[00000000]                  call    [exit]       
+    51                                  

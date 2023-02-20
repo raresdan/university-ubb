@@ -1,0 +1,131 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit, fopen, fread, fclose, printf
+     8                                  import exit msvcrt.dll
+     9                                  import fopen msvcrt.dll
+    10                                  import fread msvcrt.dll
+    11                                  import fclose msvcrt.dll
+    12                                  import printf msvcrt.dll
+    13                                  ; tell nasm that exit exists even if we won't be defining it
+    14                                  ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    15                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    16                                  
+    17                                  ;A text file is given. Read the content of the file, determine the digit with the highest frequency and display the digit along with its frequency on the screen. The name of text file is defined in the data segment.
+    18                                  
+    19                                  ; our data is declared here (the variables needed by our program)
+    20                                  segment data use32 class=data
+    21                                      
+    22 00000000 696E7075742E747874-         file_name db "input.txt", 0 ; filename to be read
+    22 00000009 00                 
+    23 0000000A 7200                        access_mode db "r", 0       ; file access mode: r - opens a file for reading. The file must exist.
+    24 0000000C FFFFFFFF                    file_descriptor dd -1       ; variable to hold the file descriptor
+    25                                      len equ 100                 ; maximum number of characters to read
+    26 00000010 546865206E756D6265-         format db "The number is: %d. The frequency is: %d", 0  ;Printing format
+    26 00000019 722069733A2025642E-
+    26 00000022 205468652066726571-
+    26 0000002B 75656E63792069733A-
+    26 00000034 20256400           
+    27 00000038 00<rept>                    input_text times 100 db 0   ;The text read from the file
+    28 0000009C 00<rept>                    frecv times 10 db 0         ;Frequency 'array'
+    29 000000A6 00000000                    max_frecv dd 0
+    30 000000AA 00000000                    max_nr dd 0
+    31                                  
+    32                                  ; our code starts here
+    33                                  segment code use32 class=code
+    34                                      start:
+    35                                          
+    36                                          ; call fopen() to open the file
+    37                                          ; fopen() will return a file descriptor in the EAX or 0 in case of error
+    38                                          ; eax = fopen(file_name, access_mode)
+    39 00000000 68[0A000000]                    push dword access_mode     
+    40 00000005 68[00000000]                    push dword file_name
+    41 0000000A FF15[00000000]                  call [fopen]
+    42 00000010 83C408                          add esp, 4*2                
+    43                                  
+    44 00000013 A3[0C000000]                    mov [file_descriptor], eax  ; store the file descriptor returned by fopen
+    45                                  
+    46                                          ; check if fopen() has successfully created the file (EAX != 0)
+    47 00000018 83F800                          cmp eax, 0
+    48 0000001B 0F8497000000                    jz final
+    49                                  
+    50                                          ; read the text from file using fread()
+    51                                          ; eax = fread(text, 1, len, file_descriptor)
+    52                                          repeat_reading:
+    53 00000021 FF35[0C000000]                      push dword [file_descriptor]
+    54 00000027 6A64                                push dword len
+    55 00000029 6A01                                push dword 1
+    56 0000002B 68[38000000]                        push dword input_text       
+    57 00000030 FF15[00000000]                      call [fread]
+    58 00000036 83C410                              add esp, 4*4
+    59                                          
+    60                                          
+    61                                              ; determine the digit with the highest frequency
+    62                                              ; when the program stops reading, jump at the end           
+    63 00000039 83F800                              cmp EAX, 0
+    64 0000003C 7428                                je end_of_reading
+    65                                         
+    66                                              ; parsing the frequency 'array'
+    67                                          
+    68 0000003E BB00000000                          mov EBX, 0
+    69 00000043 BE[38000000]                        mov ESI, input_text
+    70 00000048 BF[9C000000]                        mov EDI, frecv
+    71 0000004D 89C1                                mov ECX, EAX
+    72                                          
+    73                                              for_every_character:
+    74                                              ; comparing the character, so it is a digit between 0 and 9
+    75                                                  find_the_frequency:
+    76 0000004F B800000000                                  mov EAX, 0
+    77 00000054 AC                                          lodsb
+    78 00000055 3C30                                        cmp AL, '0'
+    79 00000057 7209                                        jb not_digit
+    80 00000059 3C39                                        cmp AL, '9'
+    81 0000005B 7F05                                        jg not_digit
+    82                                              ; finding the digit by subtracting ascii code of '0' and increasing it's frequency       
+    83 0000005D 2C30                                        sub AL, '0'
+    84 0000005F FE0407                                      inc byte[EDI + EAX] 
+    85                                          
+    86                                          ; go back until we have character left to check or numbers left to be read      
+    87                                          not_digit:
+    88 00000062 E2EB                                loop for_every_character
+    89 00000064 EBBB                                jmp repeat_reading
+    90                                                 
+    91                                      end_of_reading:    
+    92                                      ; call fclose() to close the file
+    93                                      ; fclose(file_descriptor)
+    94 00000066 FF35[0C000000]              push dword [file_descriptor]
+    95 0000006C FF15[00000000]              call [fclose]
+    96 00000072 83C404                      add esp, 4
+    97                                      
+    98                                      ; determine the highest frequency
+    99 00000075 BE[9C000000]                mov ESI, frecv
+   100 0000007A BB00000000                  mov EBX, 0
+   101 0000007F B900000000                  mov ECX, 0
+   102                                      find_maximum_frequency:
+   103 00000084 AC                              lodsb
+   104 00000085 3A05[A6000000]                  cmp AL, [max_frecv]
+   105 0000008B 720B                            jb not_found_larger
+   106 0000008D A2[A6000000]                    mov [max_frecv], AL
+   107 00000092 890D[AA000000]                  mov [max_nr], ECX
+   108                                          
+   109                                      not_found_larger:
+   110 00000098 41                              inc ECX
+   111 00000099 83F90A                          cmp ECX, 10
+   112 0000009C 75E6                            jne find_maximum_frequency
+   113                                          
+   114                                          
+   115                                      ; printf(format, number, frequency)
+   116 0000009E FF35[A6000000]              push dword [max_frecv]
+   117 000000A4 FF35[AA000000]              push dword[max_nr]
+   118 000000AA 68[10000000]                push dword format
+   119 000000AF FF15[00000000]              call [printf]
+   120 000000B5 83C40C                      add esp, 4*3
+   121                                  
+   122                                      final:
+   123                                  
+   124                                      ; exit(0)
+   125 000000B8 6A00                        push dword 0
+   126 000000BA FF15[00000000]              call [exit]

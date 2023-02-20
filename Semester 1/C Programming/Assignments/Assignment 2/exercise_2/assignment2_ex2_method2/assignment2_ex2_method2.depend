@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1673431933 source:d:\_documente_rares\desktop\semester 1\c programming\assignments\assignment 2\exercise_2\assignment2_ex2_method2\main.c
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+

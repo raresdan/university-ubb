@@ -1,0 +1,72 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit, fopen, fread, fclose, printf
+     8                                  import exit msvcrt.dll
+     9                                  import fopen msvcrt.dll
+    10                                  import fread msvcrt.dll
+    11                                  import fclose msvcrt.dll
+    12                                  import printf msvcrt.dll
+    13                                  ; tell nasm that exit exists even if we won't be defining it
+    14                                  ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    15                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    16                                  
+    17                                  ; our data is declared here (the variables needed by our program)
+    18                                  segment data use32 class=data
+    19 00000000 696E7075742E747874-         file_name db "input.txt", 0 ; filename to be read
+    19 00000009 00                 
+    20 0000000A 7200                        access_mode db "r", 0       ; file access mode:
+    21                                                                  ; r - opens a file for reading. The file must exist.
+    22 0000000C FFFFFFFF                    file_descriptor dd -1       ; variable to hold the file descriptor
+    23                                      len equ 100                 ; maximum number of characters to read
+    24                                      number resb 0               ; variable to hold the number which is read from file
+    25 00000010 256400                      format db "%d", 0
+    26                                  
+    27                                  ; our code starts here
+    28                                  segment code use32 class=code
+    29                                      start:
+    30                                          ; call fopen() to create the file
+    31                                          ; fopen() will return a file descriptor in the EAX or 0 in case of error
+    32                                          ; eax = fopen(file_name, access_mode)
+    33 00000000 68[0A000000]                    push dword access_mode     
+    34 00000005 68[00000000]                    push dword file_name
+    35 0000000A FF15[00000000]                  call [fopen]
+    36 00000010 83C408                          add esp, 4*2                ; clean-up the stack
+    37                                  
+    38 00000013 A3[0C000000]                    mov [file_descriptor], eax  ; store the file descriptor returned by fopen
+    39                                  
+    40                                          ; check if fopen() has successfully created the file (EAX != 0)
+    41 00000018 83F800                          cmp eax, 0
+    42 0000001B 743A                            je final
+    43                                  
+    44                                          ; read the text from file using fread()
+    45                                          ; after the fread() call, EAX will contain the number of chars we've read 
+    46                                          ; eax = fread(number, 1, len, file_descriptor)
+    47 0000001D FF35[0C000000]                  push dword [file_descriptor]
+    48 00000023 6A64                            push dword len
+    49 00000025 6A01                            push dword 1
+    50 00000027 68[10000000]                    push dword number        
+    51 0000002C FF15[00000000]                  call [fread]
+    52 00000032 83C410                          add esp, 4*4
+    53                                  
+    54                                          ; display the number of chars we've read and the text
+    55                                          ; printf(format, eax, number)
+    56 00000035 68[10000000]                    push dword number
+    57 0000003A 68[10000000]                    push dword format
+    58 0000003F FF15[00000000]                  call [printf]
+    59 00000045 83C40C                          add esp, 4*3
+    60                                  
+    61                                          ; call fclose() to close the file
+    62                                          ; fclose(file_descriptor)
+    63 00000048 FF35[0C000000]                  push dword [file_descriptor]
+    64 0000004E FF15[00000000]                  call [fclose]
+    65 00000054 83C404                          add esp, 4
+    66                                  
+    67                                        final:
+    68                                  
+    69                                          ; exit(0)
+    70 00000057 6A00                            push dword 0
+    71 00000059 FF15[00000000]                  call [exit]

@@ -1,0 +1,68 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; A word string s is given. Build the byte string d such that each element d[i] contains:
+    12                                  ;   - the count of zeros in the word s[i], if s[i] is a negative number
+    13                                  ;   - the count of ones in the word s[i], if s[i] is a positive number
+    14                                  ;   Example:
+    15                                  ;       s: -22, 145, -48, 127
+    16                                  ;       in binary:
+    17                                  ;       1111111111101010, 10010001, 1111111111010000, 1111111
+    18                                  ;       d: 3, 3, 5, 7                          
+    19                                                            
+    20                                  ; our data is declared here (the variables needed by our program)
+    21                                  segment data use32 class=data
+    22                                      ; ...
+    23 00000000 EAFF9100D0FF7F00            s dw -22, 145, -48, 127
+    24                                      l equ ($-s)/2
+    25 00000008 00<rept>                    d times l db 0 
+    26                                  
+    27                                  ; our code starts here
+    28                                  segment code use32 class=code
+    29                                      start:
+    30                                          ; ...
+    31 00000000 B904000000                  mov ecx, l 
+    32 00000005 FC                          cld;
+    33 00000006 BE[00000000]                mov esi, s
+    34 0000000B BF[08000000]                mov edi, d
+    35                                      
+    36                                      repeat:
+    37 00000010 66BB0000                        mov bx, 0000H ; Result: number of 1s.
+    38 00000014 66BA0000                        mov dx, 0000H ; Result: number of 0s.
+    39 00000018 66AD                            lodsw         ; ax = [esi]; increases esi
+    40                                          go_back:
+    41 0000001A 66A90100                            test ax, 1
+    42 0000001E 7404                                jz zero
+    43 00000020 6643                                    inc bx
+    44 00000022 7402                                    jz one
+    45                                              zero:
+    46 00000024 6642                                    inc dx
+    47                                              one:
+    48 00000026 66D1E8                                  shr ax, 01h    ; Shift the byte, least significant bit to CF.
+    49 00000029 73EF                                    jnc go_back    
+    50                                              
+    51 0000002B 7505                        jne cf_is_1
+    52 0000002D 6689D0                          mov ax, dx
+    53 00000030 EB03                            jmp continue
+    54                                      cf_is_1:
+    55 00000032 6689D8                          mov ax, bx
+    56                                      continue:
+    57 00000035 66AB                            stosw; edi = [ax], increases edi
+    58                                      
+    59 00000037 E2D7                        loop repeat
+    60                                             
+    61                                      
+    62                                         
+    63                                  
+    64                                          
+    65                                      ; exit(0)
+    66                                      out:
+    67 00000039 6A00                        push    dword 0      ; push the parameter for exit onto the stack
+    68 0000003B FF15[00000000]              call    [exit]       ; call exit to terminate the program
