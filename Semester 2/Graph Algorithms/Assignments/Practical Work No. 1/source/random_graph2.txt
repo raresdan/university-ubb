@@ -1,0 +1,1 @@
+A directed graph with 6 vertices can have at most 30 edges. It cannot have 40 edges.

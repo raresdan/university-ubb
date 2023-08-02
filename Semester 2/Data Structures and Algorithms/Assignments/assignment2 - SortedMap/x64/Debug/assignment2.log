@@ -1,0 +1,7 @@
+﻿  ExtendedTest.cpp
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\ExtendedTest.cpp(116,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\ExtendedTest.cpp(126,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\ExtendedTest.cpp(134,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\ExtendedTest.cpp(142,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\ExtendedTest.cpp(251,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  assignment2.vcxproj -> D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\x64\Debug\assignment2.exe

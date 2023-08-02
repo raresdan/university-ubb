@@ -1,0 +1,21 @@
+[2023-04-12 18:50:10] [info] Start Program:
+Path:"D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\x64\Debug\assignment2.exe"
+Arguments:
+Working directory: "D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\"
+Modules: Selected: D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\x64\Debug\assignment2.exe Excluded: 
+Sources: Selected: D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Rares\AppData\Local\Temp\u0kgbh42.ipy 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2023-04-12 18:50:10] [info] Module: D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\x64\Debug\assignment2.exe is selected because it matches selected pattern: D:\_DOCUMENTE_RARES\Desktop\Semester 2\Data Structures and Algorithms\Assignments\assignment2 - SortedMap\x64\Debug\assignment2.exe
+[2023-04-12 18:50:13] [info] ----------------------------------------------------
+[2023-04-12 18:50:13] [info] Coverage binary generated in file: C:\Users\Rares\AppData\Local\Temp\u0kgbh42.ipy
+[2023-04-12 18:50:13] [info] ----------------------------------------------------
