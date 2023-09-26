@@ -1,0 +1,21 @@
+[2023-04-23 15:25:47] [info] Start Program:
+Path:"D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Training\Test 1\t1_exercise2\x64\Debug\t1_exercise2.exe"
+Arguments:
+Working directory: "D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Training\Test 1\t1_exercise2\"
+Modules: Selected: D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Training\Test 1\t1_exercise2\x64\Debug\t1_exercise2.exe Excluded: 
+Sources: Selected: D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Training\Test 1\t1_exercise2 Excluded: Ui.cpp 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Rares\AppData\Local\Temp\ga2zbc5y.n1x 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2023-04-23 15:25:47] [info] Module: D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Training\Test 1\t1_exercise2\x64\Debug\t1_exercise2.exe is selected because it matches selected pattern: D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Training\Test 1\t1_exercise2\x64\Debug\t1_exercise2.exe
+[2023-04-23 15:25:48] [info] ----------------------------------------------------
+[2023-04-23 15:25:48] [info] Coverage binary generated in file: C:\Users\Rares\AppData\Local\Temp\ga2zbc5y.n1x
+[2023-04-23 15:25:48] [info] ----------------------------------------------------

@@ -1,0 +1,3 @@
+Tom,phd_student
+Marry,senior
+Miguel,postdoc

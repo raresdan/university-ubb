@@ -1,0 +1,18 @@
+﻿  DynamicArray.c
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\DynamicArray.c(7,37): warning C4013: 'malloc' undefined; assuming extern returning int
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\DynamicArray.c(7,65): warning C4312: 'type cast': conversion from 'int' to 'DynamicArray *' of greater size
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\DynamicArray.c(12,47): warning C4047: '=': 'TElem *' differs in levels of indirection from 'int'
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\DynamicArray.c(20,2): warning C4013: 'free' undefined; assuming extern returning int
+  main.c
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\main.c(8,9): warning C4101: 'p2': unreferenced local variable
+  Planet.c
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\Planet.c(8,14): warning C4013: 'malloc' undefined; assuming extern returning int
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\Planet.c(8,22): warning C4013: 'strlen' undefined; assuming extern returning int
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\Planet.c(8,55): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\Planet.c(11,5): warning C4013: 'strcpy' undefined; assuming extern returning int
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\Planet.c(13,55): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\Planet.c(16,9): warning C4013: 'free' undefined; assuming extern returning int
+  Repository.c
+  Generating Code...
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\DynamicArray.c(14): warning C4715: 'createArray': not all control paths return a value
+  seminar1.vcxproj -> D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar 1\x64\Debug\seminar1.exe

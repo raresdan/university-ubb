@@ -1,0 +1,5 @@
+Surgery Name: A Doctors: 10 Patients: 10 Efficient: 0
+Neonatal-Unit Name: Radu-Stanca Doctors: 50 Average Grade: 7 Efficient: 0
+Surgery Name: Recuperare Doctors: 45 Patients: 100 Efficient: 1
+Surgery Name: Spitalul-Militar Doctors: 70 Patients: 90 Efficient: 0
+Neonatal-Unit Name: Z Doctors: 10 Average Grade: 10 Efficient: 1

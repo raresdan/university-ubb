@@ -1,0 +1,11 @@
+﻿  Tests.cpp
+  main.cpp
+  Generating Code...
+Tests.obj : error LNK2019: unresolved external symbol "public: __cdecl LinkedList<int>::LinkedList<int>(class Node<int> *)" (??0?$LinkedList@H@@QEAA@PEAV?$Node@H@@@Z) referenced in function "public: static void __cdecl Tests::testLinkedList(void)" (?testLinkedList@Tests@@SAXXZ)
+Tests.obj : error LNK2019: unresolved external symbol "public: __cdecl LinkedList<int>::LinkedList<int>(class LinkedList<int> const &)" (??0?$LinkedList@H@@QEAA@AEBV0@@Z) referenced in function "public: static void __cdecl Tests::testLinkedList(void)" (?testLinkedList@Tests@@SAXXZ)
+Tests.obj : error LNK2019: unresolved external symbol "public: __cdecl LinkedList<int>::~LinkedList<int>(void)" (??1?$LinkedList@H@@QEAA@XZ) referenced in function "public: static void __cdecl Tests::testLinkedList(void)" (?testLinkedList@Tests@@SAXXZ)
+Tests.obj : error LNK2019: unresolved external symbol "public: class LinkedList<int> & __cdecl LinkedList<int>::operator=(class LinkedList<int> const &)" (??4?$LinkedList@H@@QEAAAEAV0@AEBV0@@Z) referenced in function "public: static void __cdecl Tests::testLinkedList(void)" (?testLinkedList@Tests@@SAXXZ)
+Tests.obj : error LNK2019: unresolved external symbol "public: int & __cdecl LinkedList<int>::operator[](int)" (??A?$LinkedList@H@@QEAAAEAHH@Z) referenced in function "public: static void __cdecl Tests::testLinkedList(void)" (?testLinkedList@Tests@@SAXXZ)
+Tests.obj : error LNK2019: unresolved external symbol "public: void __cdecl LinkedList<int>::add(int const &)" (?add@?$LinkedList@H@@QEAAXAEBH@Z) referenced in function "public: static void __cdecl Tests::testLinkedList(void)" (?testLinkedList@Tests@@SAXXZ)
+Tests.obj : error LNK2019: unresolved external symbol "public: int __cdecl LinkedList<int>::getSize(void)const " (?getSize@?$LinkedList@H@@QEBAHXZ) referenced in function "public: static void __cdecl Tests::testLinkedList(void)" (?testLinkedList@Tests@@SAXXZ)
+D:\_DOCUMENTE_RARES\Desktop\Semester 2\Object Oriented Programming\Seminars\Seminar3_Week2_stub\x64\Debug\Seminar3_Week2_stub.exe : fatal error LNK1120: 7 unresolved externals

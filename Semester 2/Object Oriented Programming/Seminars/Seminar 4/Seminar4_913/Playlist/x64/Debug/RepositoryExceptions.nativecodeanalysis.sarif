@@ -1,0 +1,43 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32216.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/repositoryexceptions.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "c9451fdbe3040d32bf106cff53f94cb48b6fe24874c820022f6bf8527c3ec0dc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/repositoryexceptions.h"
+          },
+          "hashes": {
+            "sha-256": "207e754ac802d85ea907cf6fb633c3f7ac2464d8f77f635e0f0ac69feacc08b8"
+          }
+        }
+      ]
+    }
+  ]
+}

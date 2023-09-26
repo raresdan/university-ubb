@@ -1,0 +1,2 @@
+BP,Date: 2023.05.14,Systolic: 100,Diastolic: 59,Good Result: 0
+BMI,Date: 2023.05.15,Value: 20,Good Result: 1

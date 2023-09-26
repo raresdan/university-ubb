@@ -1,0 +1,107 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32216.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/main.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "c8a65fef61e77c86a83ec2cddf8c2b270b5833059fe33c5bf00ea3c44aa95005"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/ui.h"
+          },
+          "hashes": {
+            "sha-256": "c909548490afb232ae94aaabb565a371872ce45ffb10cb165c8ee57fb51d5565"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/service.h"
+          },
+          "hashes": {
+            "sha-256": "d4cd0ac09bd9bc1757f26571b6af32ee0d7b61d6fb968335161d5ea633498d0e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/repository.h"
+          },
+          "hashes": {
+            "sha-256": "b5faa6aef935ae9ade3b4fe912d582235406221bdc30ab4de135010895468444"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/song.h"
+          },
+          "hashes": {
+            "sha-256": "6b04bbb6fa2f52f16a6635189140acedf06206cd6c3209962674b4bfada079d5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/playlist.h"
+          },
+          "hashes": {
+            "sha-256": "fd442519cdb33a32dae77b0bb24e87a5287ded6dcefc4f3aafe86506e3b4ec5d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/fileplaylist.h"
+          },
+          "hashes": {
+            "sha-256": "6e0ef1b508d35bfa67588f44a194ab9cbcc21c430aaefce9431db2426619aa41"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/repositoryexceptions.h"
+          },
+          "hashes": {
+            "sha-256": "207e754ac802d85ea907cf6fb633c3f7ac2464d8f77f635e0f0ac69feacc08b8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/csvplaylist.h"
+          },
+          "hashes": {
+            "sha-256": "38d72c6747dbdd33bde96be5ea750cc9871ebc7f0389f4b135c053912cd622c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/jsonplaylist.h"
+          },
+          "hashes": {
+            "sha-256": "c3eb55f40f1d8015aca34d8b5b0ba282eaf8278a7e859875bcabe2b59e83d0bc"
+          }
+        }
+      ]
+    }
+  ]
+}

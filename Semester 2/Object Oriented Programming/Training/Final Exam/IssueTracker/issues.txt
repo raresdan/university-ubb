@@ -1,0 +1,5 @@
+EnounteredBugs,closed,Nick,solver
+IncorrectPort,open,Nick,-
+DatabaseCrash,closed,Danny,Lucas
+IncompleteCoverage,open,Danny,-
+Security,closed,Danny,Andrew

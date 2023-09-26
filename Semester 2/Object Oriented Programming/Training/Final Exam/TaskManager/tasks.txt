@@ -1,0 +1,8 @@
+Write_script,open,0
+Deploy_on_cloud,in_progress,3
+Frontend,in_progress,2
+Bussines_intelligence,in_progress,1
+Create_database,closed,3
+Backend,closed,2
+Machine_learning,closed,3
+Code,open,0

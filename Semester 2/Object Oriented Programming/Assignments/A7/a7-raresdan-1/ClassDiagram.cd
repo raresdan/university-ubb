@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AdministratorService">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAIAAABAEAABAAAAAAAAIAAACAAAIAAAAAA=</HashCode>
+      <FileName>AdministratorService.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CsvWatchlist">
+    <Position X="6.5" Y="13.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAABAAAgAA=</HashCode>
+      <FileName>CsvWatchlist.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileException">
+    <Position X="1" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Exception.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileWatchlist">
+    <Position X="8.5" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAACAAAAAAAAAAAIAAAAAAAgAABAAAAAA=</HashCode>
+      <FileName>FileWatchlist.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HtmlWatchlist">
+    <Position X="10.5" Y="13.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAECAAAAAAAAAAgAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>HtmlWatchlist.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Repository">
+    <Position X="0.75" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAJBAAAAAAAAEAABAAQAAAAAIAABAAAAJAAAAAA=</HashCode>
+      <FileName>Repository.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tests">
+    <Position X="1" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgCAAABAgAAAAAgAQAAQAAAAAAAEAAAAAgAABAAAAAA=</HashCode>
+      <FileName>Tests.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tutorial">
+    <Position X="3.5" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAQAAAJEAAAAAAAQCAAAogAAACACAgAAZAAEg=</HashCode>
+      <FileName>Tutorial.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui">
+    <Position X="7" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgRAQACCCEhADAAAQAAAAAABgAAAAAAAQQAA=</HashCode>
+      <FileName>Ui.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserService">
+    <Position X="3.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAABAAAABgBAIAAACAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>UserService.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Watchlist">
+    <Position X="8.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAABAAAAAAAAIAIBAAAAAAAgAAA=</HashCode>
+      <FileName>Watchlist.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="__unnamed_struct_0498_1">
+    <Position X="3.5" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Tutorial.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="Duration" Collapsed="true">
+    <Position X="3.5" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tutorial.h</FileName>
+    </TypeIdentifier>
+    <AliasOfLine Type="__unnamed_struct_0498_1" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="4.625" Y="9.25" />
+        <Point X="4.625" Y="9.12" />
+        <Point X="4.5" Y="9.12" />
+        <Point X="4.5" Y="8.812" />
+      </Path>
+    </AliasOfLine>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

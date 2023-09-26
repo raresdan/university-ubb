@@ -1,0 +1,9 @@
+Tudor,gulintudor@stud.ubbcluj.ro,social;new;football,-
+David,seudavid@stud.ubbcluj.ro,reading;basketball;swimming,Publicity
+Narcis,grecunracis@stud.ubbcluj.ro,games;reading;football,HumanResources
+Dragos,gavrusdragos@stud.ubbcluj.ro,events;social;media,Events
+Dan,goiadan@stud.ubbcluj.ro,games;swimming;football,Events
+Erik,hygederik@stud.ubbcluj.ro,games;sponsors;football,Events
+Andrei,gotaandrei@stud.ubbcluj.ro,games;swimming;football,-
+Andreea,badiuandreea@stud.ubbcluj.ro,organization;swimming;football,Events
+Marcel,marcel@gmail.com,organization,HumanResources

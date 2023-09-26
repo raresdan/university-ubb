@@ -1,0 +1,8 @@
+Erik,undiagnosed,-,-,04.12.2023
+Maria,infectie,ORL,Tudor,09.12.2023
+Dan,otita,ORL,Tudor,10.12.2023
+Andrei,ranit,chirurgie,Radu,12.03.2023
+Marian,fractura,chirurgie,Radu,12.12.2023
+Dana,x-ray,radiologie,Mircea,17.12.2023
+Dragos,D,radiologie,Mircea,23.06.2023
+Ana,undiagnosed,,,17.06.2023

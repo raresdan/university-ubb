@@ -1,0 +1,67 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32216.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/csvplaylist.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "7af92b2eca81bb35a76d3f7caa2727df1d11784dffe9e42cd1d619e3d1d22fba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/csvplaylist.h"
+          },
+          "hashes": {
+            "sha-256": "38d72c6747dbdd33bde96be5ea750cc9871ebc7f0389f4b135c053912cd622c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/fileplaylist.h"
+          },
+          "hashes": {
+            "sha-256": "6e0ef1b508d35bfa67588f44a194ab9cbcc21c430aaefce9431db2426619aa41"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/playlist.h"
+          },
+          "hashes": {
+            "sha-256": "fd442519cdb33a32dae77b0bb24e87a5287ded6dcefc4f3aafe86506e3b4ec5d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/_documente_rares/desktop/semester 2/object oriented programming/seminars/seminar 4/seminar4_913/playlist/song.h"
+          },
+          "hashes": {
+            "sha-256": "6b04bbb6fa2f52f16a6635189140acedf06206cd6c3209962674b4bfada079d5"
+          }
+        }
+      ]
+    }
+  ]
+}

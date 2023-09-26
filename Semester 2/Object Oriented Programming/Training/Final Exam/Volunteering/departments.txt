@@ -1,0 +1,3 @@
+HumanResources,Hires new volunteers and informs everybody about events
+Events,Takes care of organization and sponsors
+Publicity,Shares the events on social media

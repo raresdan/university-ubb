@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture11_demo", "Lecture11_demo\Lecture11_demo.vcxproj", "{A07FBD66-AFA3-4B5C-A75B-E9A9E03FCABA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture11_custom_models", "Lecture11_custom_models\Lecture11_custom_models.vcxproj", "{32AF75A8-6B5F-42C0-98E5-02A7E63CD935}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A07FBD66-AFA3-4B5C-A75B-E9A9E03FCABA}.Debug|x64.ActiveCfg = Debug|x64
+		{A07FBD66-AFA3-4B5C-A75B-E9A9E03FCABA}.Debug|x64.Build.0 = Debug|x64
+		{A07FBD66-AFA3-4B5C-A75B-E9A9E03FCABA}.Release|x64.ActiveCfg = Release|x64
+		{A07FBD66-AFA3-4B5C-A75B-E9A9E03FCABA}.Release|x64.Build.0 = Release|x64
+		{32AF75A8-6B5F-42C0-98E5-02A7E63CD935}.Debug|x64.ActiveCfg = Debug|x64
+		{32AF75A8-6B5F-42C0-98E5-02A7E63CD935}.Debug|x64.Build.0 = Debug|x64
+		{32AF75A8-6B5F-42C0-98E5-02A7E63CD935}.Release|x64.ActiveCfg = Release|x64
+		{32AF75A8-6B5F-42C0-98E5-02A7E63CD935}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BE8F33E-0602-4C55-8CE2-5D5C1AA22E58}
+	EndGlobalSection
+EndGlobal

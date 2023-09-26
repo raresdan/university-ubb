@@ -1,0 +1,4 @@
+Robot,Artificial Intel,proposed,Miguel,2
+Hospital App,X-RAY scanner,proposed,Tom,3
+Climate,Carbon emissions,proposed,Miguel,1
+Security,New viruses detection,accepted,Marry,2
