@@ -1,0 +1,412 @@
+Id=1
+ExeStack:
+int a
+int b
+int c
+a = 1
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+int b
+int c
+a = 1
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+int b
+int c
+a = 1
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+int c
+a = 1
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 0
+b = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+int c
+a = 1
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 0
+b = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+a = 1
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 0
+b = 0
+c = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+a = 1
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 0
+b = 0
+c = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 1
+b = 0
+c = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+b = 2
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 1
+b = 0
+c = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+c = 5
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 5
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+switch((a * 10)) (case ((b * c)) : {print(a); print(b)}) (case (10) : {print(100); print(200)}) (default : {print(300)})
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 5
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+if (a * 10) == (b * c) then print(a); print(b) else if (a * 10) == 10 then print(100); print(200) else print(300)
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 5
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+print(a)
+print(b)
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 5
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+print(a)
+print(b)
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 5
+
+Output:
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+print(b)
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 5
+
+Output:
+1
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+print(300)
+
+SymTable:
+a = 1
+b = 2
+c = 5
+
+Output:
+1
+2
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+
+Id=1
+ExeStack:
+
+SymTable:
+a = 1
+b = 2
+c = 5
+
+Output:
+1
+2
+300
+
+File Table:
+
+Heap Table:
+
+Semaphore Table:
+
+
+

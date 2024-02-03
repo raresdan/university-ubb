@@ -1,0 +1,24 @@
+Remove all occurences of an element E from a non-linear list
+i=(2 3 (4 7 (2) 1 2)), e=2 => (3 (4 7 () 1))
+math model remove(l1...ln, E) = [] if n = 0
+		                remove(l2...ln, E) if atom(l1) and l1 == E
+				l1 U remove(l2...ln, E) if atom(l1) and l1 != E
+				rmeove(l1, E) U remove(l2...ln) if l1 is a list
+
+(defun remove(l e)
+  (cond
+	((null l) nil)
+	((and (atom(car l)) (=e(car el))) (remove(car l) e))  ;car takes element from the left, cdr from the right
+  	((atom(car l)) (cons(car l) (remove(cdr l) e)
+	(t (cons(remove(car l)e) (remove(cdr l) e))) ;cons = reunion
+  )
+)
+
+
+
+
+STRUCTURE OF LISP FUNCITON
+(defun fName(args)
+  (fName args)
+  (cond ((cond1) result1) ((cond2)result2))
+)

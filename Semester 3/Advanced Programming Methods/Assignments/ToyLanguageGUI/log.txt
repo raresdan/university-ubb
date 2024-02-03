@@ -1,0 +1,416 @@
+
+Id=1
+ExeStack:
+int v
+v = 10
+fork(v = (v - 1); v = (v - 1); print(v))
+sleep(10)
+print((v * 10))
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+v = 10
+fork(v = (v - 1); v = (v - 1); print(v))
+sleep(10)
+print((v * 10))
+
+SymTable:
+v = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+v = 10
+fork(v = (v - 1); v = (v - 1); print(v))
+sleep(10)
+print((v * 10))
+
+SymTable:
+v = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+fork(v = (v - 1); v = (v - 1); print(v))
+sleep(10)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+fork(v = (v - 1); v = (v - 1); print(v))
+sleep(10)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(10)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=2
+ExeStack:
+v = (v - 1)
+v = (v - 1)
+print(v)
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(10)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=2
+ExeStack:
+v = (v - 1)
+v = (v - 1)
+print(v)
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(9)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=2
+ExeStack:
+v = (v - 1)
+print(v)
+
+SymTable:
+v = 9
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(8)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=2
+ExeStack:
+v = (v - 1)
+print(v)
+
+SymTable:
+v = 9
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(7)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=2
+ExeStack:
+print(v)
+
+SymTable:
+v = 8
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(6)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=2
+ExeStack:
+
+SymTable:
+v = 8
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(5)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(4)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(3)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(2)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(1)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+sleep(0)
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+print((v * 10))
+
+SymTable:
+v = 10
+
+Output:
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+
+SymTable:
+v = 10
+
+Output:
+8
+100
+
+File Table:
+
+Heap Table:
+
+
+

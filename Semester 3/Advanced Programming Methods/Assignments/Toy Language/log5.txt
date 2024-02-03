@@ -1,0 +1,209 @@
+Id=5
+ExeStack:
+Ref(int) v
+new(v, 20)
+Ref(Ref(int)) a
+new(a, v)
+print(v)
+print(a)
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=5
+ExeStack:
+new(v, 20)
+Ref(Ref(int)) a
+new(a, v)
+print(v)
+print(a)
+
+SymTable:
+v = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=5
+ExeStack:
+new(v, 20)
+Ref(Ref(int)) a
+new(a, v)
+print(v)
+print(a)
+
+SymTable:
+v = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=5
+ExeStack:
+Ref(Ref(int)) a
+new(a, v)
+print(v)
+print(a)
+
+SymTable:
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=5
+ExeStack:
+Ref(Ref(int)) a
+new(a, v)
+print(v)
+print(a)
+
+SymTable:
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=5
+ExeStack:
+new(a, v)
+print(v)
+print(a)
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=5
+ExeStack:
+new(a, v)
+print(v)
+print(a)
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=5
+ExeStack:
+print(v)
+print(a)
+
+SymTable:
+a = Ref(2, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+2 -> Ref(1, int)
+
+
+
+Id=5
+ExeStack:
+print(v)
+print(a)
+
+SymTable:
+a = Ref(2, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+2 -> Ref(1, int)
+
+
+
+Id=5
+ExeStack:
+print(a)
+
+SymTable:
+a = Ref(2, Ref(int))
+v = Ref(1, int)
+
+Output:
+Ref(1, int)
+
+File Table:
+
+Heap Table:
+1 -> 20
+2 -> Ref(1, int)
+
+
+
+Id=5
+ExeStack:
+
+SymTable:
+a = Ref(2, Ref(int))
+v = Ref(1, int)
+
+Output:
+Ref(1, int)
+Ref(2, Ref(int))
+
+File Table:
+
+Heap Table:
+1 -> 20
+2 -> Ref(1, int)
+
+
+

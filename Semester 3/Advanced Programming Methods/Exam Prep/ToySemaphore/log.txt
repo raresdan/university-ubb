@@ -1,0 +1,936 @@
+Id=1
+ExeStack:
+Ref(int) v1
+int cnt
+new(v1, 2)
+newSemaphore(cnt, readHeap(v1), 1)
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+int cnt
+new(v1, 2)
+newSemaphore(cnt, readHeap(v1), 1)
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+v1 = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+int cnt
+new(v1, 2)
+newSemaphore(cnt, readHeap(v1), 1)
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+v1 = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+new(v1, 2)
+newSemaphore(cnt, readHeap(v1), 1)
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 0
+v1 = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+new(v1, 2)
+newSemaphore(cnt, readHeap(v1), 1)
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 0
+v1 = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+newSemaphore(cnt, readHeap(v1), 1)
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 0
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=1
+ExeStack:
+newSemaphore(cnt, readHeap(v1), 1)
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 0
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=1
+ExeStack:
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=1
+ExeStack:
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); print(readHeap(v1)); release(cnt))
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=1
+ExeStack:
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=2
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=1
+ExeStack:
+fork(acquire(cnt); writeHeap(v1, (readHeap(v1) * 10)); writeHeap(v1, (readHeap(v1) * 2)); print(readHeap(v1)); release(cnt))
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=2
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=1
+ExeStack:
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=2
+ExeStack:
+writeHeap(v1, (readHeap(v1) * 10))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=1
+ExeStack:
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=2
+ExeStack:
+writeHeap(v1, (readHeap(v1) * 10))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 2
+
+
+
+Id=1
+ExeStack:
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=2
+ExeStack:
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=2
+ExeStack:
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=2
+ExeStack:
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+acquire(cnt)
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=2
+ExeStack:
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+print((readHeap(v1) - 1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+acquire(cnt)
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+writeHeap(v1, (readHeap(v1) * 10))
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=3
+ExeStack:
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 200
+
+
+
+Id=3
+ExeStack:
+writeHeap(v1, (readHeap(v1) * 2))
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 200
+
+
+
+Id=3
+ExeStack:
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 400
+
+
+
+Id=3
+ExeStack:
+print(readHeap(v1))
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+
+File Table:
+
+Heap Table:
+1 -> 400
+
+
+
+Id=3
+ExeStack:
+release(cnt)
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+400
+
+File Table:
+
+Heap Table:
+1 -> 400
+
+
+
+Id=3
+ExeStack:
+
+SymTable:
+cnt = 1
+v1 = Ref(1, int)
+
+Output:
+20
+19
+400
+
+File Table:
+
+Heap Table:
+1 -> 400
+
+
+

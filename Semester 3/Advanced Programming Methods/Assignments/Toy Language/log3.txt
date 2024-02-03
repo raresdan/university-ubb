@@ -1,0 +1,173 @@
+Id=3
+ExeStack:
+bool a
+int v
+a = true
+if a then v = 2 else v = 3
+print(v)
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+int v
+a = true
+if a then v = 2 else v = 3
+print(v)
+
+SymTable:
+a = false
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+int v
+a = true
+if a then v = 2 else v = 3
+print(v)
+
+SymTable:
+a = false
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+a = true
+if a then v = 2 else v = 3
+print(v)
+
+SymTable:
+a = false
+v = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+a = true
+if a then v = 2 else v = 3
+print(v)
+
+SymTable:
+a = false
+v = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+if a then v = 2 else v = 3
+print(v)
+
+SymTable:
+a = true
+v = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+if a then v = 2 else v = 3
+print(v)
+
+SymTable:
+a = true
+v = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+v = 2
+print(v)
+
+SymTable:
+a = true
+v = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+print(v)
+
+SymTable:
+a = true
+v = 2
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=3
+ExeStack:
+
+SymTable:
+a = true
+v = 2
+
+Output:
+2
+
+File Table:
+
+Heap Table:
+
+
+

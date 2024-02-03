@@ -1,0 +1,209 @@
+Id=6
+ExeStack:
+Ref(int) v
+new(v, 20)
+Ref(Ref(int)) a
+new(a, v)
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=6
+ExeStack:
+new(v, 20)
+Ref(Ref(int)) a
+new(a, v)
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+v = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=6
+ExeStack:
+new(v, 20)
+Ref(Ref(int)) a
+new(a, v)
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+v = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=6
+ExeStack:
+Ref(Ref(int)) a
+new(a, v)
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=6
+ExeStack:
+Ref(Ref(int)) a
+new(a, v)
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=6
+ExeStack:
+new(a, v)
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=6
+ExeStack:
+new(a, v)
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=6
+ExeStack:
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+a = Ref(2, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+2 -> Ref(1, int)
+
+
+
+Id=6
+ExeStack:
+print(readHeap(v))
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+a = Ref(2, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+2 -> Ref(1, int)
+
+
+
+Id=6
+ExeStack:
+print((readHeap(readHeap(a)) + 5))
+
+SymTable:
+a = Ref(2, Ref(int))
+v = Ref(1, int)
+
+Output:
+20
+
+File Table:
+
+Heap Table:
+1 -> 20
+2 -> Ref(1, int)
+
+
+
+Id=6
+ExeStack:
+
+SymTable:
+a = Ref(2, Ref(int))
+v = Ref(1, int)
+
+Output:
+20
+25
+
+File Table:
+
+Heap Table:
+1 -> 20
+2 -> Ref(1, int)
+
+
+

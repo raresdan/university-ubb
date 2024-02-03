@@ -1,0 +1,101 @@
+1) Build a list with the posititons of the minimum number from a linear list
+math model: posMin(l1...ln, min, p1...pk, ind) = p1...pn if n=0
+					       = posMin(l2...ln, min, p1...pk, ind+1) if l1 not a number
+					       = posMin(l2...ln, l1, (ind), ind+1) if (l1 number, min not a number) or (l1<min and l1,min numbers)
+						%the min is l1, the positionsList will get the index of the min, index increases
+					       = posMin(l2...ln, min, p1...pk, ind+1) if min<l1(l, min numbers)
+					       = posMin(l2...ln, min, p1...pk U ind, ind+1) otherwise(l1 = min)
+
+(defun posMin(l min p ind)
+  (cond
+    ( (null l) p )
+    ( (not (numberp(car l))) (posMin(cdr l) min p()+ ind 1)) )
+    ( (and (numberp min) (< min (car l)) (posMin (cdr l) min p (+ ind 1)) )
+    ( and (numberp min) (= (min()car l)) (posMin(cdr l) min (append p (list ind)) (+ ind 1)) )
+    ( t (posMin(cdr l) (car l) (list ind) (+ ind 1)) )
+  )
+)
+
+(defun main(l)
+  ( posMin l (cdr l) () 1 )
+)
+
+
+
+
+		MAP FUNCTIONS
+(defun triple()x
+  (* 3 x)
+)
+
+(mapcar #'triple '(1 2 3)) same as (list (triple 1) (triple 2) (triple 3))
+# = marks that the following argument is a function
+(mapcar #'fName inputList)
+
+
+
+
+(lambda (argument)
+
+)
+
+
+
+
+
+2) Compute the product of all numerical elems in a non-linear list
+math model: product(x) = x if x number
+		       = 1 if x is atom
+                       = product from i=1 to n: product(xi) otherwise (when x is a list)
+
+(defun product(x)
+  (cond
+    ((numberp x) x)
+    ((atom x) 1) ;if x not a list and not a number bc number check is the first condition
+    (t (apply '* (mapcar #'(lambda(y)
+			      (occ y e)
+                           )
+                           x)))
+) )
+;lambda function used bc we have e as param(which is not an input list)
+  )
+)
+
+
+
+
+
+
+3) Compute the nr of occurences of an elem e in a non-linear list.
+math model: occ(x, e) = 1 if atom(x) and x = e
+                      = 0 if atom(x) and x != e
+                      = sum from 1 to n of occurences(xi, e), x = x1...xn
+
+(defun occ(x e)
+ (cond
+   ( (and (atom x) (= x e)) )
+   ( (atom x) 0 )
+   ( t (apply '+(mapcar #'occ x)) )
+ )
+)
+
+
+
+
+
+
+
+4) Liniarize a non-linear list keeping only the numerical values
+(1 a (2 (b 3))) => (1 2 3)
+
+lin(x) = (x) if x is a number
+       = () if x not a number
+       = append(lin(x1), lin(x2),..., lin(xn)), x list
+
+(defun lin(x)
+ (cond
+   ( (numberp x) list(x) )
+   ( (atom x) () )
+   ( t (apply #'append(mapcar #'lin x)) )  ;(mapcan #'lin x)
+ )
+)

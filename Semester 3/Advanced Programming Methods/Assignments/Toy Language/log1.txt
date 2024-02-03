@@ -1,0 +1,114 @@
+Id=1
+ExeStack:
+bool v
+v = true
+int a
+NOP
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+v = true
+int a
+NOP
+
+SymTable:
+v = false
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+v = true
+int a
+NOP
+
+SymTable:
+v = false
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+int a
+NOP
+
+SymTable:
+v = true
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+int a
+NOP
+
+SymTable:
+v = true
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+NOP
+
+SymTable:
+a = 0
+v = true
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+
+SymTable:
+a = 0
+v = true
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+

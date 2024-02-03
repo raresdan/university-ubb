@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="574.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source.controller.view_controllers.ProgramController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="574.0" prefWidth="832.0">
+         <children>
+            <TextField fx:id="numberOfPrgStates" alignment="TOP_LEFT" prefHeight="29.0" prefWidth="832.0" />
+            <GridPane prefHeight="492.0" prefWidth="853.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="44.39999475479126" minHeight="10.0" prefHeight="20.4" />
+                <RowConstraints maxHeight="140.4" minHeight="0.0" prefHeight="140.4" />
+                <RowConstraints maxHeight="136.60000762939453" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="148.79999999999998" minHeight="10.0" prefHeight="139.79999999999998" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="190.0" minHeight="9.199999999999989" prefHeight="18.19999999999999" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="190.0" minHeight="10.0" prefHeight="139.2" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="heapTableView" prefHeight="117.0" prefWidth="300.0" GridPane.rowIndex="1">
+                    <columns>
+                      <TableColumn fx:id="heapAddressColumn" prefWidth="207.20001220703125" text="Address" />
+                      <TableColumn fx:id="heapValueColumn" prefWidth="208.0" text="Value" />
+                    </columns>
+                  </TableView>
+                  <ListView fx:id="outputListView" prefHeight="106.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></ListView>
+                  <ListView fx:id="fileTableView" prefHeight="78.0" prefWidth="300.0" GridPane.rowIndex="3" />
+                  <ListView fx:id="prgStatesIdentifiersView" onMouseClicked="#populate" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TableView fx:id="symTableView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                    <columns>
+                      <TableColumn fx:id="variableNameColumn" prefWidth="204.60000610351562" text="Variable Name" />
+                      <TableColumn fx:id="symValueColumn" prefWidth="211.39999389648438" text="Value" />
+                    </columns>
+                  </TableView>
+                  <ListView fx:id="exeStackView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="434.0" text="Heap Table" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="417.0" text=" Output List" textAlignment="CENTER" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></Label>
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="417.0" text="File Table" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="418.0" text="Program States Identifier" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="443.0" text="Symbol Table" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="425.0" text="Execution Stack" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="832.0">
+               <children>
+                  <Button fx:id="oneStepButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleOneStepButton" text="One Step" />
+                  <Button fx:id="allStepsButton" mnemonicParsing="false" onAction="#handleAllStepsButton" text="All Steps">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></Button>
+                    
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

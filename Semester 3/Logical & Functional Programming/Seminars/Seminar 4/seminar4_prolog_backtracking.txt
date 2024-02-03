@@ -1,0 +1,67 @@
+Given a list, geenrate all the arrangements of K, knowing product P and sum S.
+[1,2,3,10], P=30, S=13; R=[[3,10], [10,3]]
+
+!!!findall(S, subsets(L, S), R).
+
+math model sum(l1,...ln) = 0, if n = 0
+			 = l1 + sum(l2,...ln) if n > 0
+math model product(l1,...ln) = 1, if n = 0
+			 = l1 * product(l2,...ln) if n > 0
+%sum(L: list, R: int)
+%sum(i,i) or sum(i,o)
+
+sum([], 0).
+sum([H|T], S):-
+  sum(T, R1),
+  R is R1 + H.
+
+product([], 1).
+product([H|T], R):-
+  product(T, R1),
+  R is R1 * H.
+
+math model arrangements(l1...ln, k) = [l1] if k=1
+				    = insert(l1, arrangementss(l2...ln, k-1)), if k>1
+				    = arrangements(l2...ln, k), k>=1 %for skipping
+
+math model insert(el, l1...ln) = el U l1...ln 
+			       = l1 U insert(el, l2...ln) %insert in middle
+%insert(i,i,o)
+
+insert(el, L, [el|L]).
+insert(E, [H|T], R):-
+  insert(E, T, R1),
+  R = [H|R1].
+
+%arrangements(i,i,o)
+arrangements([H|_], 1, [H]).
+arrangements([H|T], K, R):-
+  K > 1,
+  K1 is K - 1,
+  arrangements(T, K1, R1),
+  insert(H, R2).
+  R is R2.
+arrangements([_|T], K, R):-
+  arrangements(T, K, R).
+
+
+math model solve(l1...ln, K, S, P) = A if A = arrangements(L, K) and sum(A)=S and product(A)=P
+
+solve(L, K, S, P, R):-
+  arrangements(L, K, A),
+  sum(A, S),
+  product(A, P),
+  R = A.
+
+main(L, K, S, P, R):-
+  feindall(RPartial, solve(L, K, S, P, RPartial), R).
+
+
+
+
+
+
+
+We are given a sequence composed of distinct integers. We have to display all the
+subsequences that have a valley aspect (opposite of mountain aspect)-SOLUTIN ON SEMINAR4
+

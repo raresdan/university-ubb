@@ -1,0 +1,112 @@
+%1) compute the depth of a tree denoted ( node(subtree1) ...) -use map
+
+level 0: A
+level 1: B,C: child of C is D(level 2)
+(A(B) (C(D)))
+
+%math model: depth(tree) = 0, if tree is an atom
+			 = 1+max(depth(tree)) i=1,n if tree is a list
+
+(defun depth(tree)
+  (cond
+	((atom tree) 0)
+	( t (+ 1 (apply #'max(mapcar #'depth tree))) )
+  )
+)
+
+
+
+
+%2) write function to remove all elements multiple of m (use map function)
+ex for m=5 => (A 20 (12 11 (15))) => (A (12 11))
+
+%math model: del(l) = l, if l is non-numerical or number not divisible to m
+		    = nil, if l is numerical and multiple m
+		    = list(append(del(l))), l=1,n %here we return the list of append bc append would flatten the list, but we need all the levels
+
+
+(defun del(l,m)
+  (cond
+    ( (and (numberp l) (= 0 (mod l m))) nil )
+    ( (atom l) (list l) ) %if atom return the list
+    ( t (list( mapcan #'(lambda(li) (del li m)) l )) ) %we need to use lamba when we have an extra parameter, other than input list(in this case m is extra parameter)
+  )
+)
+
+
+
+%3) compute the number of sublists where the first numerical character is 5.
+(a 5(b c d) 2 1 (6 (5 h) 7 d) 11 14) => 3 sublists (G (5 h) 7 d), (5 h), and (a ...)
+
+%math mode: flat(l) = list(l), if l is a number
+		    = nil, if l is a non-numberical atom
+		    = append flat(li), if l is a list l=1,n
+
+
+(defun flat (l)
+  (cond
+    ( (numberp l) list(l) )
+    ( (atom l) nil )
+    ( t(mapcan #' flat l) )
+  )
+)
+
+%math model check5(l) = T, if l1 is 5
+		      = F, otherwise
+(defun check5
+  (cond
+    ( (= (car l) 5) T ) %return true if number is 5
+    ( t nil ) %otherwise return nil(false)
+  )
+)
+
+%math model countSublists(l) = 0, if l is atom
+			     = 1 + sum(countSublists(li)), if l is a list and check5 is true
+			     = l + sum(countSublists(li)), otherwise
+
+(defun countSublists(l)
+  (cond
+    ( (atom l) 0 )
+    ( (and (listp l) (check5 (flat l))) )
+    ( + 1 (apply #'+ (mapcar #'countSublists l)) )
+    ( t (apply #'+ (mapcar #'countSublists l)) )
+  )
+)
+
+
+
+%4) write a program to generate all sublists with the property that the difference between any 2 consecutibe elements is a multiple of 3. Subsets must have at least 2 elems.
+%math model checkProperty(l1...ln) = true, if n<2
+				   = checkProperty(l2...ln), if abs(l1-l2) %3 == 0
+				   = false, otherwise
+%checkProperty(L: list), flow model checkProperty(i) %we do not need output param bc it returns only true or false
+checkProperty([_]).
+checkProperty([H1,H2|T]):-
+  D is abs(H1 - H2),
+  D mod 3 == 0,
+  check_porperty([H2|T]).
+
+%subsets of a list math model:
+%math model subsets(l1...ln) = [], if n=0
+			     = l1 U subsets(l2...ln), if n>0
+			     = subsets(l2...ln), if n>0
+%flow model: (i,o)
+subsets([],[]).
+subsets([H|T],R):-
+  subsets(T, R1),
+  R = [H|R1].
+subsets([_|T],R):-
+  subsets(T,R1),
+  R = R1.
+
+%math model: one_sol(L) = S, S = subset(L) and checkProperty(S) and nS >= 2
+%one_sol(L: list, R: list)
+%flow model(i,o)
+one_sol(L,R):-
+  subsets(L,R),
+  R = [_,_|_], %means there are at most 2 elems in the list
+  checkProperty(R).
+
+main(L,R):-
+  findall(X, one_sol(L,X),R).
+

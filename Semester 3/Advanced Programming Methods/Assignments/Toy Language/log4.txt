@@ -1,0 +1,346 @@
+Id=4
+ExeStack:
+str varf
+varf = test.in
+fopen(varf)
+int varc
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+varf = test.in
+fopen(varf)
+int varc
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = 
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+varf = test.in
+fopen(varf)
+int varc
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = 
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+fopen(varf)
+int varc
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+fopen(varf)
+int varc
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+int varc
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+
+Output:
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+int varc
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+
+Output:
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 0
+
+Output:
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+fread(varf, varc)
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 0
+
+Output:
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 15
+
+Output:
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+print(varc)
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 15
+
+Output:
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 15
+
+Output:
+15
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+fread(varf, varc)
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 15
+
+Output:
+15
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 50
+
+Output:
+15
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+print(varc)
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 50
+
+Output:
+15
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+fclose(varf)
+
+SymTable:
+varf = test.in
+varc = 50
+
+Output:
+15
+50
+
+File Table:
+test.in
+
+Heap Table:
+
+
+
+Id=4
+ExeStack:
+
+SymTable:
+varf = test.in
+varc = 50
+
+Output:
+15
+50
+
+File Table:
+
+Heap Table:
+
+
+

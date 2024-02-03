@@ -1,0 +1,186 @@
+Id=1
+ExeStack:
+Ref(int) v
+new(v, 20)
+Ref(Ref(int)) a
+NOP
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+new(v, 20)
+Ref(Ref(int)) a
+NOP
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+v = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+new(v, 20)
+Ref(Ref(int)) a
+NOP
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+v = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=1
+ExeStack:
+Ref(Ref(int)) a
+NOP
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+Ref(Ref(int)) a
+NOP
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+NOP
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+NOP
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+new(v, 30)
+print(readHeap(readHeap(a)))
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(1, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 20
+
+
+
+Id=1
+ExeStack:
+print(readHeap(readHeap(a)))
+
+SymTable:
+a = Ref(0, Ref(int))
+v = Ref(2, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+2 -> 30
+
+
+

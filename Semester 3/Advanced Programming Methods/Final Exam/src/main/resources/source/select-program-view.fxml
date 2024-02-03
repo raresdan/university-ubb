@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source.controller.view_controllers.SelectProgramController">
+   <children>
+      <AnchorPane prefHeight="536.0" prefWidth="794.0">
+         <children>
+            <BorderPane prefHeight="512.0" prefWidth="788.0">
+               <center>
+                  <ListView fx:id="programsList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+               <bottom>
+                  <Button fx:id="executeButton" mnemonicParsing="false" onAction="#executeButtonHandler" text="Execute" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

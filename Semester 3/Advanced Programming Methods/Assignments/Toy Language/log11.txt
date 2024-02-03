@@ -1,0 +1,2251 @@
+Id=11
+ExeStack:
+Ref(int) a
+int counter
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+int counter
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+int counter
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=12
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 1
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=12
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=13
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 1
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=13
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 1
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 0
+
+
+
+Id=13
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(1, int)
+counter = 0
+
+Output:
+
+File Table:
+
+Heap Table:
+1 -> 0
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 1
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+1 -> 0
+
+
+
+Id=13
+ExeStack:
+
+SymTable:
+a = Ref(1, int)
+counter = 0
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+1 -> 0
+
+
+
+Id=14
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 1
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+1 -> 0
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 2
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+
+
+
+Id=14
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 1
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+
+
+
+Id=15
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 1
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 2
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+
+
+
+Id=15
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 1
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 2
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+2 -> 1
+
+
+
+Id=15
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(2, int)
+counter = 1
+
+Output:
+0
+
+File Table:
+
+Heap Table:
+2 -> 1
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 2
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+2 -> 1
+
+
+
+Id=15
+ExeStack:
+
+SymTable:
+a = Ref(2, int)
+counter = 1
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+2 -> 1
+
+
+
+Id=16
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 2
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+2 -> 1
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 3
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+
+
+
+Id=16
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 2
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+
+
+
+Id=17
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 2
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 3
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+
+
+
+Id=17
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 2
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 3
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+3 -> 2
+
+
+
+Id=17
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(3, int)
+counter = 2
+
+Output:
+0
+1
+
+File Table:
+
+Heap Table:
+3 -> 2
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 3
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+3 -> 2
+
+
+
+Id=17
+ExeStack:
+
+SymTable:
+a = Ref(3, int)
+counter = 2
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+3 -> 2
+
+
+
+Id=18
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 3
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+3 -> 2
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 4
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+
+
+
+Id=18
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 3
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+
+
+
+Id=19
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 3
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 4
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+
+
+
+Id=19
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 3
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 4
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+4 -> 3
+
+
+
+Id=19
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(4, int)
+counter = 3
+
+Output:
+0
+1
+2
+
+File Table:
+
+Heap Table:
+4 -> 3
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 4
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+4 -> 3
+
+
+
+Id=19
+ExeStack:
+
+SymTable:
+a = Ref(4, int)
+counter = 3
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+4 -> 3
+
+
+
+Id=20
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 4
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+4 -> 3
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+
+
+
+Id=20
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 4
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+
+
+
+Id=21
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 4
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+
+
+
+Id=21
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 4
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+5 -> 4
+
+
+
+Id=21
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(5, int)
+counter = 4
+
+Output:
+0
+1
+2
+3
+
+File Table:
+
+Heap Table:
+5 -> 4
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+5 -> 4
+
+
+
+Id=21
+ExeStack:
+
+SymTable:
+a = Ref(5, int)
+counter = 4
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+5 -> 4
+
+
+
+Id=22
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+5 -> 4
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+
+
+
+Id=22
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+
+
+
+Id=23
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+
+
+
+Id=23
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+6 -> 5
+
+
+
+Id=23
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(6, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+4
+
+File Table:
+
+Heap Table:
+6 -> 5
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+6 -> 5
+
+
+
+Id=23
+ExeStack:
+
+SymTable:
+a = Ref(6, int)
+counter = 5
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+6 -> 5
+
+
+
+Id=24
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+6 -> 5
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+
+
+
+Id=24
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+
+
+
+Id=25
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+
+
+
+Id=25
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+7 -> 6
+
+
+
+Id=25
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(7, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+5
+
+File Table:
+
+Heap Table:
+7 -> 6
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+7 -> 6
+
+
+
+Id=25
+ExeStack:
+
+SymTable:
+a = Ref(7, int)
+counter = 6
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+7 -> 6
+
+
+
+Id=26
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+7 -> 6
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+
+
+
+Id=26
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+
+
+
+Id=27
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+
+
+
+Id=27
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+8 -> 7
+
+
+
+Id=27
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(8, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+
+File Table:
+
+Heap Table:
+8 -> 7
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+8 -> 7
+
+
+
+Id=27
+ExeStack:
+
+SymTable:
+a = Ref(8, int)
+counter = 7
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+8 -> 7
+
+
+
+Id=28
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+8 -> 7
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+
+
+
+Id=28
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+
+
+
+Id=29
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+
+
+
+Id=29
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+fork(fork(new(a, counter);print(readHeap(a))))
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+9 -> 8
+
+
+
+Id=29
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(9, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+
+File Table:
+
+Heap Table:
+9 -> 8
+
+
+
+Id=11
+ExeStack:
+counter = (counter + 1)
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+9 -> 8
+
+
+
+Id=29
+ExeStack:
+
+SymTable:
+a = Ref(9, int)
+counter = 8
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+9 -> 8
+
+
+
+Id=30
+ExeStack:
+fork(new(a, counter);print(readHeap(a)))
+
+SymTable:
+a = Ref(0, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+9 -> 8
+
+
+
+Id=11
+ExeStack:
+while(counter < 10) { fork(fork(new(a, counter);print(readHeap(a))));counter = (counter + 1) }
+
+SymTable:
+a = Ref(0, int)
+counter = 10
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=30
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=31
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 10
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=31
+ExeStack:
+new(a, counter)
+print(readHeap(a))
+
+SymTable:
+a = Ref(0, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=11
+ExeStack:
+
+SymTable:
+a = Ref(0, int)
+counter = 10
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+
+
+
+Id=31
+ExeStack:
+print(readHeap(a))
+
+SymTable:
+a = Ref(10, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+File Table:
+
+Heap Table:
+10 -> 9
+
+
+
+Id=31
+ExeStack:
+
+SymTable:
+a = Ref(10, int)
+counter = 9
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+File Table:
+
+Heap Table:
+10 -> 9
+
+
+
