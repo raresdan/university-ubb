@@ -21,5 +21,5 @@
 -  [Advanced Programming Methods](./Semester%203/Advanced%20Programming%20Methods)
 -  [Computer Networks](./Semester%203/Computer%20Networks)
 -  [Databases](./Semester%203/Databases)
--  [Functional & Logic Programming](./Semester%203/Logical%20%&20Functional%20Programming)
+-  [Functional & Logic Programming](./Semester%203/Logical%20&%20Functional%20Programming)
 -  [Probabilities & Statistics](./Semester%203/Probabilities%20%26%20Statistics)
