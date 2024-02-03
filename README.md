@@ -1,7 +1,7 @@
-# University
+# 🎓 University
  This is a collection of all the materials (lectures, seminars, assignments, homework, tests) from Babeș-Bolyai University (UBB).
 
-# Semester 1
+## Semester 1
 - ➗ [Algebra](./Semester%201/Algebra)
 - 💻 [C Programming](./Semester%201/C%20Programming)
 - 🧠 [Computational Logic](./Semester%201/Computational%20Logic)
@@ -9,7 +9,7 @@
 - 👾 [Fundamentals of Programming](./Semester%201/Fundamentals%20of%20Programming)
 - 📈 [Mathematical Analysis](./Semester%201/Mathematical%20Analysis)
 
-# Semester 2
+## Semester 2
 - 📚 [Data Structures and Algorithms](./Semester%202/Data%20Structures%20and%20Algorithms)
 - ⚙️ [Dynamical Systems](./Semester%202/Dynamical%20Systems)
 - 📐 [Geometry](./Semester%202/Geometry)
@@ -17,7 +17,7 @@
 - 👀 [Object Oriented Programming](./Semester%202/Object%20Oriented%20Programming)
 - 🐧 [Operating Systems](./Semester%202/Operating%20Systems)
 
-# Semester 3
+## Semester 3
 - ☕ [Advanced Programming Methods](./Semester%203/Advanced%20Programming%20Methods)
 - 🌐 [Computer Networks](./Semester%203/Computer%20Networks)
 - 🗃️ [Databases](./Semester%203/Databases)
