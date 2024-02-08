@@ -10,7 +10,7 @@
 - 📈 [Mathematical Analysis](./Semester%201/Mathematical%20Analysis)
 
 ## Semester 2
-- 📚 [Data Structures and Algorithms](./Semester%202/Data%20Structures%20%26%20Algorithms)
+- 📚 [Data Structures & Algorithms](./Semester%202/Data%20Structures%20%26%20Algorithms)
 - ⚙️ [Dynamical Systems](./Semester%202/Dynamical%20Systems)
 - 📐 [Geometry](./Semester%202/Geometry)
 - 🗺️ [Graph Algorithms](./Semester%202/Graph%20Algorithms)
