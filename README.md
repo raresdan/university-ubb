@@ -1,5 +1,5 @@
 # 🎓 University
- This is a collection of all the materials (lectures, seminars, assignments, homework, tests) from Babeș-Bolyai University (UBB).
+ This is a collection of all the materials (lectures, seminars, assignments, homework, tests) from my Bachelor's @ Babeș-Bolyai University (UBB).
 
 ## Semester 1
 - ➗ [Algebra](./Semester%201/Algebra)
