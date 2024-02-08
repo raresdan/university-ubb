@@ -1,0 +1,89 @@
+Cinema Productions
+
+
+Movies
+
+MovieID(PK)
+Name
+Date
+CompanyID (FK)
+DirectorID (FK)
+
+
+
+
+Company
+
+CompanyID (PK)
+Name
+
+
+
+StageDirectors
+
+DirectorID (PK)
+Name
+NumAwards
+
+
+
+CinemaProductions
+
+ProductionID (Pk)
+Title
+MovieID(FK)
+
+
+
+
+Actors
+
+ActorID
+Name
+Ranking
+
+
+ActorInProduction
+ActorID(FK)
+ProductionID(FK)
+EntryMoment
+PK(ActorID, ProductionID)
+
+
+
+CREATE OR ALTER PROCEDURE addActor (@actorID INT, @productionID INT, @entryMoment VARCHAR(50))
+AS
+BEGIN
+	INSERT INTO ActorInProduction 
+	VALUES (@actorID, @productionID, @entryMoment)
+END
+
+
+
+CREATE OR ALTER VIEW actorsInAllProductions
+AS
+	SELECT A.ActorID, A.Name
+	FROM Actor A
+	WHERE (
+		SELECT COUNT(DISTINCT P.ProductionID)
+		FROM CinemaProductions P
+		) = (
+		SELECT COUNT(DISTINCT AP.ProductionID)
+		FROM ActorInProduction AP
+		WHERE AP.ActorID = A.ActorID);
+END
+GO
+
+
+CREATE OR ALTER FUNCTION releaseDateAfter2018 (@p INT)
+RETURNS TABLE
+AS
+RETURN
+	SELECT M.Name
+	FROM Movies M JOIN CinemaProductions CP ON M.MovieID = CP.MovieID
+	GROUP BY M.MovieID
+	HAVING M.ReleaseDate > '2018-01-01' AND COUNT(DISTINCT CP.ProductionID) >= p
+
+GO
+	
+
