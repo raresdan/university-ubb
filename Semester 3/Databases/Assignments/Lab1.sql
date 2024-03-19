@@ -2,7 +2,6 @@ CREATE DATABASE SocialMediaApp;
 
 USE SocialMediaApp;
 
-
 CREATE TABLE Users (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
     Username VARCHAR(50) NOT NULL,
