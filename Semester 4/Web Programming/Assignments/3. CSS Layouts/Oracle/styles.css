@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    font-family: Public Sans, sans-serif;
+}
+
+/* Top navigation bar */
+.nav-bar {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+    background-color: #3a3632;
+    position: fixed;
+    width: 100%; 
+    top: 0;
+    z-index: 9999;
+}
+
+.nav-bar .logo {
+    height: 15px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+
+.nav-bar p {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.options p {
+    margin: 0 7px;
+    font-size: 16px;
+    display: inline-block;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: text-decoration 0.3s color 0.5s ease;
+}
+
+.fa-magnifying-glass {
+    cursor: pointer;
+    height: 35px;
+    margin-right: -110px;
+    padding: 20px 10px;
+}
+
+.nav-bar .flag {
+    margin-right: -110px;
+    cursor: pointer;
+    width: 45px; 
+    height: 45px; 
+    padding: 10px; 
+}
+
+.nav-bar .flag:hover, .fa-magnifying-glass:hover {
+    background-color: black;
+    opacity: 25%;
+    border-radius: 5px;
+}
+
+.view-acc
+{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 13px 10px; 
+    background-color: #161513;
+    border: 1px solid #161513;
+    border-radius: 5px;
+    font-size: 14px;
+    position: relative;
+    margin-right: -110px;
+}
+
+.contact-sales {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 13px 10px; 
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 50px;
+}
+
+.view-acc i,
+.contact-sales i {
+    margin-right: 5px;
+}
+
+.options p:hover{
+    text-decoration:  underline 0.5px solid #fff;
+}
+
+/* Black java part*/
+.java {
+    position: relative;
+    top: 60px;
+    background-color: #161513;
+}
+
+.java p{
+    color: white;
+    padding: 25px;
+    margin-left: 35px;
+    font-size: 15px;
+}
+
+
+/* Cloud part */
+.cloud {
+    position: relative;
+    top: 60px;
+    background-color: #3a3632;
+    align-items: center;
+    display: flex;
+}
+
+.cloud .text
+{
+    position: relative;
+    margin-left: -5px;
+}
+
+.cloud img{
+    width: 22%;
+    height: 22%;
+    margin-left: 10px;
+}
+
+.cloud h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: white;
+    position: relative;
+    top: -10px;
+    font-weight: 400;
+}
+
+.cloud p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cloud button {
+    background-color: white;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    top: 10px;
+    position: relative;
+}
+
+/* Overview/Details white band*/
+.white-bar{
+    position: relative;
+    top: 60px;
+    display: flex;
+    margin-left: 55px;
+}
+
+.white-bar .overview, .white-bar .technical-details {
+    background-color: white;
+    padding: 30px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-bottom 0.1s, color 0.3s;
+}
+
+.white-bar .technical-details {
+    border-bottom: 5px solid #6f915d;
+}
+
+.white-bar .overview:hover{
+    color:lightgray;
+    border-bottom: 5px solid lightgray;
+}
+
+/* Versions part*/
+.versions {
+    position: relative;
+    top: 60px;
+    background-color: #f1efed;
+    width: 100%;
+    padding: 35px 60px;
+}
+
+.versions h2 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.versions p{
+    font-size: 15px;
+    margin-bottom: 12px;
+    color:#006b8f;
+    cursor: pointer;
+    width: 12%;
+}
+
+.versions p:hover{
+    text-decoration: underline;
+}
+
+/* Download part*/
+
+.download {
+    position: relative;
+    top: 60px;
+    background-color: #4f5a5a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 60px;
+}
+
+.download p{
+    color: white;
+    font-size: 17px;
+}
+
+.download button {
+    background-color: #5f7d4f;
+    color: white;
+    padding: 16px 22px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    margin-right: 10px;
+}
+
+.download button:hover{
+    /* set background color to a darker shade of green */
+    background-color: #4f6d3f;
+}

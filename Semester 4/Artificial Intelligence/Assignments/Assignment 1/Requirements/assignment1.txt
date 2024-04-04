@@ -1,0 +1,6 @@
+- Use Anaconda for virtual enviroment:
+
+Pillow
+NumPy
+Matplotlib
+PyTorch (Stable, Windows, Pip, Python, Cuda 12.1) in power shell prompt (conda)

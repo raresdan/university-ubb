@@ -1,0 +1,4 @@
+document.addEventListener("DOMContentLoaded", main_function() {start() ...})
+
+- only when content is loaded run the functions
+- in html only hav a div and load everything into that div using js

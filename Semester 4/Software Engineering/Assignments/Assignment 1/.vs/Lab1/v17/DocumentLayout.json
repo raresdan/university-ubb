@@ -1,0 +1,38 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\_DOCUMENTE_RARES\\Desktop\\Semester 4\\Software Engineering\\Lab1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28D8A7FC-B0E3-4EF7-8212-E64757634F3B}|Lab1\\Lab1.csproj|d:\\_documente_rares\\desktop\\semester 4\\software engineering\\lab1\\lab1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28D8A7FC-B0E3-4EF7-8212-E64757634F3B}|Lab1\\Lab1.csproj|solutionrelative:lab1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\Semester 4\\Software Engineering\\Lab1\\Lab1\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1\\Program.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\Semester 4\\Software Engineering\\Lab1\\Lab1\\Program.cs",
+              "RelativeToolTip": "Lab1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T12:36:03.695Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

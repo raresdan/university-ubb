@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+  }
+  
+  table td {
+    padding: 10px;
+  }
+  
+  .gallery-img {
+    width: 150px;
+    height: 150px;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+  }
+  
+  .gallery-img:hover {
+    opacity: 1;
+  }
+  

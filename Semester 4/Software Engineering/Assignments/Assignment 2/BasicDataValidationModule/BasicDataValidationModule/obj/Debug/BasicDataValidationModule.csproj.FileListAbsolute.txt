@@ -1,0 +1,7 @@
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Software Engineering\Assignments\Assignment 2\BasicDataValidationModule\BasicDataValidationModule\bin\Debug\BasicDataValidationModule.exe.config
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Software Engineering\Assignments\Assignment 2\BasicDataValidationModule\BasicDataValidationModule\bin\Debug\BasicDataValidationModule.exe
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Software Engineering\Assignments\Assignment 2\BasicDataValidationModule\BasicDataValidationModule\bin\Debug\BasicDataValidationModule.pdb
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Software Engineering\Assignments\Assignment 2\BasicDataValidationModule\BasicDataValidationModule\obj\Debug\BasicDataValidationModule.csproj.AssemblyReference.cache
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Software Engineering\Assignments\Assignment 2\BasicDataValidationModule\BasicDataValidationModule\obj\Debug\BasicDataValidationModule.csproj.CoreCompileInputs.cache
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Software Engineering\Assignments\Assignment 2\BasicDataValidationModule\BasicDataValidationModule\obj\Debug\BasicDataValidationModule.exe
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Software Engineering\Assignments\Assignment 2\BasicDataValidationModule\BasicDataValidationModule\obj\Debug\BasicDataValidationModule.pdb

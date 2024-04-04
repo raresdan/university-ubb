@@ -1,0 +1,39 @@
+.rainbow {
+    transform: skew(-30deg) rotate(-10deg);
+}
+
+.c {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+#d1 {
+    background: linear-gradient(to left, orange, red);
+    transform: translateX(75px) translateY(-70px) rotate(-30deg);
+}
+
+#d2 {
+    background: linear-gradient(to left, yellow, orange);
+    transform: translateX(130px) translateY(-40px) rotate(-20deg); 
+}
+
+#d3 {
+    background: linear-gradient(to left, green, yellow);
+    transform: translateX(185px) translateY(-20px) rotate(-10deg); 
+}
+
+#d4 {
+    background: linear-gradient(to left, blue, green);
+    transform: translateX(240px) translateY(0px) rotate(0deg); 
+}
+
+#d5 {
+    background: linear-gradient(to left, indigo, blue);
+    transform: translateX(295px) translateY(20px) rotate(10deg); 
+}
+
+#d6 {
+    background: linear-gradient(to left, violet, indigo);
+    transform: translateX(350px) translateY(40px) rotate(20deg);
+}

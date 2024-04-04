@@ -1,0 +1,7 @@
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Database Management Systems\Assignment 1\ConsoleBased\ConsoleBased\bin\Debug\ConsoleBased.exe.config
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Database Management Systems\Assignment 1\ConsoleBased\ConsoleBased\bin\Debug\ConsoleBased.exe
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Database Management Systems\Assignment 1\ConsoleBased\ConsoleBased\bin\Debug\ConsoleBased.pdb
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Database Management Systems\Assignment 1\ConsoleBased\ConsoleBased\obj\Debug\ConsoleBased.csproj.AssemblyReference.cache
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Database Management Systems\Assignment 1\ConsoleBased\ConsoleBased\obj\Debug\ConsoleBased.csproj.CoreCompileInputs.cache
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Database Management Systems\Assignment 1\ConsoleBased\ConsoleBased\obj\Debug\ConsoleBased.exe
+D:\_DOCUMENTE_RARES\Desktop\Semester 4\Database Management Systems\Assignment 1\ConsoleBased\ConsoleBased\obj\Debug\ConsoleBased.pdb
