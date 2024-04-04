@@ -9,7 +9,6 @@ CREATE TABLE Users (
     Age INT NOT NULL
 );
 
-
 CREATE TABLE Posts (
     PostID INT PRIMARY KEY,
     UserID INT,
@@ -93,7 +92,6 @@ CREATE TABLE Messages (
     FOREIGN KEY (ReceiverUserID) REFERENCES Users(UserID)
 );
 
-
 CREATE TABLE Stories (
     StoryID INT PRIMARY KEY,
     UserID INT,
@@ -102,3 +100,15 @@ CREATE TABLE Stories (
     CreatedAt DATETIME DEFAULT SYSDATETIME(),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
+
+
+DROP TABLE Users
+DROP TABLE Posts
+DROP TABLE Comments
+DROP TABLE Likes
+DROP TABLE Followers
+DROP TABLE FriendRequests
+DROP TABLE Groups
+DROP TABLE GroupMembers
+DROP TABLE Messages
+DROP TABLE Stories
