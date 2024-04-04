@@ -25,8 +25,8 @@
 - 📊 [Probabilities & Statistics](./Semester%203/Probabilities%20%26%20Statistics)
 
 ## Semester 4
-- 🤖 [Artificial Intelligence](./Semester%203/Artificial%20Intelligence)
-- 🗄️ [Database Management Systems](./Semester%203/Database%20Management%20Systems)
-- 🔧 [Software Engineering](./Semester%203/Software%20Engineering)
-- 👨🏻‍💻 [Systems for Design & Implementation](./Semester%203/Systems%20for%20Design%20&%20Implementation)
-- 🌐 [Web Programming](./Semester%203/Web%20Programming)
+- 🤖 [Artificial Intelligence](./Semester%204/Artificial%20Intelligence)
+- 🗄️ [Database Management Systems](./Semester%204/Database%20Management%20Systems)
+- 🔧 [Software Engineering](./Semester%204/Software%20Engineering)
+- 👨🏻‍💻 [Systems for Design & Implementation](./Semester%204/Systems%20for%20Design%20&%20Implementation)
+- 🌐 [Web Programming](./Semester%204/Web%20Programming)
