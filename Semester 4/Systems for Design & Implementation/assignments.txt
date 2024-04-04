@@ -1,0 +1,3 @@
+Frontend: https://github.com/raresdan/medevices-frontend
+
+Backend: https://github.com/raresdan/medevices-backend
