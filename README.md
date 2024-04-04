@@ -19,7 +19,14 @@
 
 ## Semester 3
 - ☕ [Advanced Programming Methods](./Semester%203/Advanced%20Programming%20Methods)
-- 🌐 [Computer Networks](./Semester%203/Computer%20Networks)
+- 🛜 [Computer Networks](./Semester%203/Computer%20Networks)
 - 🗃️ [Databases](./Semester%203/Databases)
 - 👨🏻‍🦳 [Logical & Functional Programming](./Semester%203/Logical%20&%20Functional%20Programming)
 - 📊 [Probabilities & Statistics](./Semester%203/Probabilities%20%26%20Statistics)
+
+## Semester 4
+- 🤖 [Artificial Intelligence](./Semester%203/Artificial%20Intelligence)
+- 🗄️ [Database Management Systems](./Semester%203/Database%20Management%20Systems)
+- 🔧 [Software Engineering](./Semester%203/Software%20Engineering)
+- 👨🏻‍💻 [Systems for Design & Implementation](./Semester%203/Systems%20for%20Design%20&%20Implementation)
+- 🌐 [Web Programming](./Semester%203/Web%20Programming)
