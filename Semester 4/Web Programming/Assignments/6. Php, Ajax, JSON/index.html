@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6404dcb5de.js" crossorigin="anonymous"></script>
+    <script src="showUsers.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Enterprise App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="details">
+            <h1>My Users</h1>
+            <input type="text" placeholder="Role:" id="role"/>
+            <input type="text" placeholder="Name:" id="name"/>
+            <button class="add" onclick="window.location.href='addUser/addUser.html'">
+                <icon class="fas fa-plus"></icon>
+            </button>
+        </div>
+        <table>
+            <tr>
+                <th> NAME </th>
+                <th> USERNAME </th>
+                <th> AGE </th>
+                <th> ROLE </th>
+                <th> EMAIL </th>
+                <th> WEBPAGE </th>
+                <th> ACTION </th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+    <link rel="stylesheet" type="text/css" href="../addUser/addUser.css">
+    <script src="updateUser.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Update User</h1>
+        <p><b>Please fill this form and submit to update the user in the database.</b></p>
+
+        <form action="updateUserBackend.php" method="post">
+            <input type="hidden" id="id" name="id">
+            <input type="text" id="name" name="name" placeholder="Name:"> <br>
+            <input type="text" id="username" name="username" placeholder="Username:"> <br>
+            <input type="password" id="password" name="password" placeholder="Password:"> <br>
+            <input type="number" id="age" name="age" placeholder="Age:"> <br>
+            <input type="text" id="role" name="role" placeholder="Role:"> <br>
+            <input type="text" id="email" name="email" placeholder="Email:"> <br>
+            <input type="text" id="webpage" name="webpage" placeholder="Webpage:"> <br>
+            <div class="button_container">
+                <button type="submit">Update User</button>
+                <button type="reset" onclick="window.location.href='../index.html'">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
