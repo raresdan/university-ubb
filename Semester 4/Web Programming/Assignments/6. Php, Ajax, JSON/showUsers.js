@@ -2,6 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let role = document.querySelector("#role");
     let name = document.querySelector("#name");
 
+    const previousRole = localStorage.getItem('#role');
+    console.log(previousRole);
+    if (previousRole) {
+        role.value = previousRole;
+    }
+
     role.addEventListener('input', refresh);
     name.addEventListener('input', refresh);
 
@@ -46,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector("#role").addEventListener("input", async function() {
         await refresh();
+        localStorage.setItem('#role', role.value);
     });
     document.querySelector("#name").addEventListener("input", async function() {
         await refresh();
