@@ -1,0 +1,10 @@
+<div class="container">
+  <p><b>Are you sure you want to delete this user?</b></p>
+
+  <form>
+    <input type="hidden"  id="hiddenId" name="id" [value]="id">
+    <button type="submit" class="yes" (click)="onYes(); $event.preventDefault()">YES</button>
+  </form>
+
+  <button class="no" routerLink="/">NO</button>
+</div>

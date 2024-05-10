@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="details">
+      <h1>My Users</h1>
+      <input type="text" placeholder="Role:" id="role"/>
+      <input type="text" placeholder="Name:" id="name"/>
+      <button class="add" [routerLink]="['/addUser']" [queryParams]="{role: role, name: name}"> + </button>
+  </div>
+  <table>
+      <tr>
+          <th> NAME </th>
+          <th> USERNAME </th>
+          <th> AGE </th>
+          <th> ROLE </th>
+          <th> EMAIL </th>
+          <th> WEBPAGE </th>
+          <th> ACTION </th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.webpage }}</td>
+        <td>
+          <button [routerLink]="['/updateUser']" [queryParams]="{ id: user.userID }">U</button>
+          <button [routerLink]="['/deleteUser']" [queryParams]="{ id: user.userID }">X</button>
+        </td>
+      </tr>
+  </table>
+</div>

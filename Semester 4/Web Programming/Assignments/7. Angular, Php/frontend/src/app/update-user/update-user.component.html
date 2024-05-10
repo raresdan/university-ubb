@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Update User</h1>
+  <p><b>Please fill this form and submit to update the user in the database.</b></p>
+
+  <form [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" placeholder="Name:"> <br>
+    <input type="text" formControlName="username" placeholder="Username:"> <br>
+    <input type="password" formControlName="password" placeholder="Password:"> <br>
+    <input type="number" formControlName="age" placeholder="Age:"> <br>
+    <input type="text" formControlName="role" placeholder="Role:"> <br>
+    <input type="text" formControlName="email" placeholder="Email:"> <br>
+    <input type="text" formControlName="webpage" placeholder="Webpage:"> <br>
+      <div class="button_container">
+          <button type="submit">Update User</button>
+          <button type="reset" routerLink="/">Cancel</button>
+      </div>
+  </form>
+</div>
