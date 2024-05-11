@@ -54,19 +54,16 @@ export class UserService {
 
   updateUser(userId:string, userData:any): Observable<any> {
     const updatePath = `${this.backendUrl}/updateUser.php?id=${userId}`
-    console.log('Updating user with data:', userData);
+    const params = new HttpParams({fromObject: userData});
+
     const httpOptions = {
       headers: new HttpHeaders({ 
-        'Content-Type': 'application/x-www-form-urlencoded' 
+        'Content-Type': 'application/x-www-form-urlencoded'
       })
     };
-    let body = new HttpParams();
-    Object.keys(userData).forEach(key => {
-      body = body.set(key, userData[key]);
-    });
   
-    console.log(body);
-    return this.http.post(updatePath, body.toString(), httpOptions).pipe(
+    console.log(userId, userData);
+    return this.http.post(updatePath, params, httpOptions).pipe(
       catchError(this.handleError<any>('updateUser')));
   }
 

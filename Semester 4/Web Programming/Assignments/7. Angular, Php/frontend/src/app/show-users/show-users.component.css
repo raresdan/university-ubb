@@ -28,30 +28,30 @@ body {
   margin-right: 20px;
 }
 
-.details input[type="text"] {
+input[type="text"] {
   width: 200px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s;
 }
 
-.details input[type="text"]:focus {
+input[type="text"]:focus {
   border-color: #007bff;
 }
 
-.details button.add{
+button.add {
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.details button.add:hover{
+button.add:hover {
   background-color: #0056b3;
 }
 
@@ -86,17 +86,21 @@ tr:hover {
   background-color: #ddd;
 }
 
-.icon {
-  font-size: 16px;
-  color: #007bff;
-  transition: color 0.3s ease;
+.action-button {
+  background-color: #ddd;
+  color: #333; 
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.icon:hover {
-  color: #0056b3;
+.action-button:hover {
+  background-color: #c0c0c0; 
 }
 
-a {
-  text-decoration: none; 
-  color: inherit;
+.action-button + .action-button {
+  margin-left: 5px;
 }
+

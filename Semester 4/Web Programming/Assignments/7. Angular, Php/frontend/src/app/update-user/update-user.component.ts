@@ -16,14 +16,17 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./update-user.component.css']
 })
 export class UpdateUserComponent implements OnInit {
+  id: string = '';
+  resultMessage: string = '';
   updateUserForm: FormGroup = new FormGroup({});
   constructor(private formBuilder: FormBuilder, private service: UserService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.initializeForm();
-    const id = this.route.snapshot.queryParams['id'];
-    this.service.getUserData(id).subscribe((user) => {
+    this.id = this.route.snapshot.queryParams['id'];
+    this.service.getUserData(this.id).subscribe((user) => {
     this.updateUserForm.patchValue({
+      id: this.id,
       name: user.name,
       username: user.username,
       password: user.password,
@@ -37,7 +40,7 @@ export class UpdateUserComponent implements OnInit {
 
   initializeForm() {
     this.updateUserForm = this.formBuilder.group({
-      id: [''],
+      id: [null],
       name: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -48,33 +51,31 @@ export class UpdateUserComponent implements OnInit {
     });
   }
 
-  updateUser(name: string, username: string, password: string, age: string, role: string, email: string, webpage: string): void {
-    const id = this.route.snapshot.queryParams['id'];
-    const userData = {
-      name: name,
-      username: username,
-      password: password,
-      age: age,
-      role: role,
-      email: email,
-      webpage: webpage
-    };
-    this.service.updateUser(id.toString(), userData).subscribe({
-      next: () => {
-        this.router.navigate(['/']).then(_ => {
-        });
+  updateUser(): void {
+    this.service.updateUser(this.id, this.updateUserForm.value).subscribe({
+      next: response => {
+        if (response.message) {
+          this.resultMessage = response.message;
+          this.router.navigate(['/']);
+        } else if (response.error) {
+          this.resultMessage = response.error;
+        }
+        console.log(response);
       },
-      error: (error) => {
-        console.error('There was an error updating the user', error);
+      error: error => {
+        this.resultMessage = 'Error updating user.';
+        console.error('There was an error!', error);
       }
     });
   }
 
   onSubmit(): void {
     if (this.updateUserForm.invalid) {
+      console.log('Invalid form');
       return;
     }
-    this.updateUser(this.updateUserForm.value.name, this.updateUserForm.value.username, this.updateUserForm.value.password, this.updateUserForm.value.age, this.updateUserForm.value.role, this.updateUserForm.value.email, this.updateUserForm.value.webpage);
+    console.log('Updating user');
+    this.updateUser();
   }
 
 }

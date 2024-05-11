@@ -1,8 +1,8 @@
 <div class="container">
   <div class="details">
       <h1>My Users</h1>
-      <input type="text" placeholder="Role:" id="role"/>
-      <input type="text" placeholder="Name:" id="name"/>
+      <input type="text" [(ngModel)]="role" (input)="onFilter()" placeholder="Role:">
+      <input type="text" [(ngModel)]="name" (input)="onFilter()" placeholder="Name:">
       <button class="add" [routerLink]="['/addUser']" [queryParams]="{role: role, name: name}"> + </button>
   </div>
   <table>
@@ -23,8 +23,8 @@
         <td>{{ user.email }}</td>
         <td>{{ user.webpage }}</td>
         <td>
-          <button [routerLink]="['/updateUser']" [queryParams]="{ id: user.userID }">U</button>
-          <button [routerLink]="['/deleteUser']" [queryParams]="{ id: user.userID }">X</button>
+          <button class=action-button [routerLink]="['/updateUser']" [queryParams]="{ id: user.userID }">Update</button>
+          <button class=action-button [routerLink]="['/deleteUser']" [queryParams]="{ id: user.userID }"> X </button>
         </td>
       </tr>
   </table>
