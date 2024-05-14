@@ -16,14 +16,15 @@ export class ShowUsersComponent implements OnInit {
 
   users: Array<User> = [];
   role = '';
+  previousRoleFilter = '';
   name = '';
 
   constructor(private service: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    const previousRoleFilter = localStorage.getItem('roleFilter') ?? '';
+    this.previousRoleFilter = localStorage.getItem('roleFilter') ?? '';
     const previousNameFilter = localStorage.getItem('nameFilter') ?? '';
-    this.role = previousRoleFilter;
+    this.role = this.previousRoleFilter;
     this.name = previousNameFilter;
     this.loadUsers(this.role, this.name);
   }

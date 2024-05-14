@@ -5,6 +5,7 @@
       <input type="text" [(ngModel)]="name" (input)="onFilter()" placeholder="Name:">
       <button class="add" [routerLink]="['/addUser']" [queryParams]="{role: role, name: name}"> + </button>
   </div>
+  <p>Previous Search: {{previousRoleFilter}} </p>
   <table>
       <tr>
           <th> NAME </th>
