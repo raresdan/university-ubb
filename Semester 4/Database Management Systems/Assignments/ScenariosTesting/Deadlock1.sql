@@ -10,9 +10,10 @@ SELECT * FROM Courses
 
 -- transaction 1
 BEGIN TRAN
-UPDATE Students SET FirstName='DeadLock' WHERE StudentID = 20
+UPDATE Courses SET CourseName='Operating Systems' WHERE CourseID = 6
+
 -- this transaction has exclusively lock on table Students
 WAITFOR DELAY '00:00:10'
-UPDATE Courses SET CourseName='Operating Systems' WHERE CourseID = 6
+UPDATE Students SET FirstName='DeadLock' WHERE StudentID = 20
 -- this transaction will be blocked because transaction 2 has already blocked our lock on table Courses
 COMMIT TRAN

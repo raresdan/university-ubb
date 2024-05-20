@@ -20,7 +20,7 @@ AS
 	BEGIN CATCH
 		SELECT @error = ERROR_MESSAGE()
 		EXEC addLog 'Student not added!', @error
-		COMMIT TRAN
+		ROLLBACK TRAN
 		RETURN
 	END CATCH
 
@@ -31,7 +31,7 @@ AS
 	BEGIN CATCH
 		SELECT @error = ERROR_MESSAGE()
 		EXEC addLog 'Course not added!', @error
-		COMMIT TRAN
+		ROLLBACK TRAN
 		RETURN
 	END CATCH
 
@@ -44,7 +44,7 @@ AS
 	BEGIN CATCH
 		SELECT @error = ERROR_MESSAGE()
 		EXEC addLog 'Enrolment not added!', @error
-		COMMIT TRAN
+		ROLLBACK TRAN
 		RETURN
 	END CATCH
 	EXEC addLog 'All actions executed!', '-'
@@ -53,8 +53,8 @@ AS
 GO
 
 
-EXEC addRecoveryPossible 'Rares', 'Goia', 'Artificial Intelligence'
-EXEC addRecoveryPossible 'Rares', 'Goia', null
+EXEC addRecoveryPossible 'Student', 'One', 'Artificial Intelligence'
+EXEC addRecoveryPossible 'Student', 'Two', null
 EXEC addRecoveryPossible null, null, 'Object Oriented Programming'
 
 SELECT * FROM Students
