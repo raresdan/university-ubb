@@ -16,8 +16,14 @@ public class AddController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         try {
-            DatabaseManager.addURL(Integer.valueOf(req.getParameter("userid")), req.getParameter("url"));
-            System.out.println("URL added successfully");
+            boolean exists = DatabaseManager.validateURL(req.getParameter("url"));
+            if (exists) {
+                req.getSession().setAttribute("error", "URL already added!");
+            }
+            else {
+                DatabaseManager.addURL(Integer.valueOf(req.getParameter("userid")), req.getParameter("url"));
+                System.out.println("URL added successfully");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

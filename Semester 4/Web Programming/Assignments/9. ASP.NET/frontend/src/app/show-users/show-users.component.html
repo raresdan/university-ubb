@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="details">
+      <h1>My Users</h1>
+      <input type="text" [(ngModel)]="role" (input)="onFilter()" placeholder="Role:">
+      <input type="text" [(ngModel)]="name" (input)="onFilter()" placeholder="Name:">
+      <button class="add" [routerLink]="['/addUser']" [queryParams]="{role: role, name: name}"> + </button>
+  </div>
+  <p>Previous Search: {{previousRoleFilter}} </p>
+  <table>
+      <tr>
+          <th> NAME </th>
+          <th> USERNAME </th>
+          <th> AGE </th>
+          <th> ROLE </th>
+          <th> EMAIL </th>
+          <th> WEBPAGE </th>
+          <th> ACTION </th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.webpage }}</td>
+        <td>
+          <button class=action-button [routerLink]="['/updateUser']" [queryParams]="{ id: user.userID }">Update</button>
+          <button class=action-button [routerLink]="['/deleteUser']" [queryParams]="{ id: user.userID }"> X </button>
+        </td>
+      </tr>
+  </table>
+</div>

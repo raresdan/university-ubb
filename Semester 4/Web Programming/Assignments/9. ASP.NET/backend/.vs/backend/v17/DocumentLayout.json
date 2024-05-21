@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|d:\\_documente_rares\\desktop\\university\\semester 4\\web programming\\assignments\\9. asp.net\\backend\\backend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|solutionrelative:backend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|d:\\_documente_rares\\desktop\\university\\semester 4\\web programming\\assignments\\9. asp.net\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "backend\\Program.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\backend\\Program.cs",
+              "RelativeToolTip": "backend\\Program.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwCQAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T21:35:10.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\backend\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\backend\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "backend\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAywFUAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T21:22:45.69Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

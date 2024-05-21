@@ -25,6 +25,15 @@
         <input type="text" id="urlText" placeholder="New url:">
         <button onclick="add(<%= user.getId() %>)">Add</button>
     </label>
+    <%
+        String err = (String) session.getAttribute("error");
+        if (err != null) {
+    %>
+    <p><%= err %></p>
+    <%
+            session.removeAttribute("error");
+        }
+    %>
     <p id="errorMsg">
         Invalid url! Try another one
     </p>

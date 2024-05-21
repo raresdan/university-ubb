@@ -76,6 +76,19 @@ public class DatabaseManager {
         }
     }
 
+    public static boolean validateURL(String url) throws SQLException {
+        connect();
+        try {
+            String query = "SELECT * FROM URLs WHERE url=?";
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, url);
+            resultSet = preparedStatement.executeQuery();
+            return resultSet.next();
+        } finally {
+            close();
+        }
+    }
+
     // Method to delete URL for a user
     public static void deleteURL(int urlId) throws SQLException {
         connect();
