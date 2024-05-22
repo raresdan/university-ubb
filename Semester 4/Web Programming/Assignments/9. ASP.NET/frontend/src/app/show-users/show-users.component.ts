@@ -4,6 +4,7 @@ import {User} from '../user';
 import {Router, RouterLink} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-show-users',
@@ -19,9 +20,11 @@ export class ShowUsersComponent implements OnInit {
   previousRoleFilter = '';
   name = '';
 
-  constructor(private service: UserService, private router: Router) {}
+  constructor(private service: UserService, private router: Router, private cookies:CookieService) {}
 
   ngOnInit(): void {
+    if (this.cookies.get("loggedIn") != "1")
+      this.router.navigate(["login"]);
     this.previousRoleFilter = localStorage.getItem('roleFilter') ?? '';
     const previousNameFilter = localStorage.getItem('nameFilter') ?? '';
     this.role = this.previousRoleFilter;
@@ -39,5 +42,10 @@ export class ShowUsersComponent implements OnInit {
     localStorage.setItem('roleFilter', this.role);
     localStorage.setItem('nameFilter', this.name);
     this.loadUsers(this.role, this.name);
+  }
+
+  logout() {
+    this.cookies.delete('loggedIn');
+    this.router.navigate(["/"]);
   }
 }

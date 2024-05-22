@@ -41,7 +41,7 @@ input[type="text"]:focus {
   border-color: #007bff;
 }
 
-button.add {
+button.add, button.logout {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -51,8 +51,13 @@ button.add {
   transition: background-color 0.3s;
 }
 
-button.add:hover {
+button.add:hover, button.logout:hover {
   background-color: #0056b3;
+}
+
+button.logout {
+  margin-left: auto;
+  float:right;
 }
 
 table {

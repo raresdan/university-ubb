@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../user.service';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
     selector: 'app-login',
@@ -15,7 +16,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup = new FormGroup({});
-    constructor(private formBuilder: FormBuilder, private service: UserService, private router: Router) {}
+    constructor(private formBuilder: FormBuilder, private service: UserService, private router: Router, private cookies:CookieService) {}
 
     ngOnInit() {
         this.loginForm = new FormGroup({
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
         this.service.login(this.loginForm.value).subscribe({
             next: response => {
                 console.log('User logged in successfully.', response);
+                this.cookies.set('loggedIn', "1");
                 this.router.navigate(['/users']);
             },
             error: error => {
