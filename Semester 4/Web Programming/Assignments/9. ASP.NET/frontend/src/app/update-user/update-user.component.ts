@@ -41,11 +41,11 @@ export class UpdateUserComponent implements OnInit {
     this.updateUserForm = this.formBuilder.group({
       id: [null],
       name: ['', Validators.required],
-      username: ['', Validators.required],
+      username: [{value: '', disabled: true}, Validators.required],
       password: ['', Validators.required],
       age: [null],
       role: [''],
-      email: ['', Validators.required],
+      email: [{value: '', disabled: true}, Validators.required ],
       webpage: ['']
     });
   }
@@ -53,7 +53,7 @@ export class UpdateUserComponent implements OnInit {
   updateUser(): void {
     this.service.updateUser(this.id, this.updateUserForm.value).subscribe({
       next: response => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/users']);
         console.log('User updated successfully', response);
       },
       error: error => {

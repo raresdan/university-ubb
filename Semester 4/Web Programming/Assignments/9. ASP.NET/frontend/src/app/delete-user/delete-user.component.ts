@@ -25,7 +25,7 @@ export class DeleteUserComponent implements OnInit {
   onYes(): void {
     if (this.id !== null) {
       this.service.deleteUser(this.id).subscribe(() => {
-        this.router.navigate(['/']).then(_ => {
+        this.router.navigate(['/users']).then(_ => {
           console.log('User deleted successfully');
         });
       });

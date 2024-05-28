@@ -28,6 +28,11 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.service.login(this.loginForm.value).subscribe({
             next: response => {
+                console.log(response.status)
+                if (response.status != undefined) {
+                    console.error('Error logging in:', response.status);
+                    return;
+                }
                 console.log('User logged in successfully.', response);
                 this.cookies.set('loggedIn', "1");
                 this.router.navigate(['/users']);

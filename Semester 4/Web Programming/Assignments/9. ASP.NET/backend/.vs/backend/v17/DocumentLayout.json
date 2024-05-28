@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|solutionrelative:backend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|d:\\_documente_rares\\desktop\\university\\semester 4\\web programming\\assignments\\9. asp.net\\backend\\backend\\data abstraction layer\\dataabstractionlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|solutionrelative:backend\\data abstraction layer\\dataabstractionlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|d:\\_documente_rares\\desktop\\university\\semester 4\\web programming\\assignments\\9. asp.net\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92BFDE68-E219-45E0-989D-ACDFCE0A2EF7}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -27,6 +31,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DataAbstractionLayer.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\backend\\Data Abstraction Layer\\DataAbstractionLayer.cs",
+              "RelativeDocumentMoniker": "backend\\Data Abstraction Layer\\DataAbstractionLayer.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\backend\\Data Abstraction Layer\\DataAbstractionLayer.cs",
+              "RelativeToolTip": "backend\\Data Abstraction Layer\\DataAbstractionLayer.cs",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAswJwAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:01:04.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\backend\\Program.cs",
               "RelativeDocumentMoniker": "backend\\Program.cs",
@@ -44,7 +61,7 @@
               "RelativeDocumentMoniker": "backend\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\university\\Semester 4\\Web Programming\\Assignments\\9. ASP.NET\\backend\\backend\\Controllers\\HomeController.cs",
               "RelativeToolTip": "backend\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAADwv1UAAAAkAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAIwE4AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T21:22:45.69Z",
               "EditorCaption": ""

@@ -74,8 +74,8 @@ namespace backend.Controllers
         public IActionResult Login(string username, string password)
         {
             DataAbstractionLayer dal = new DataAbstractionLayer();
-            List<User> users = dal.GetUsers();
-            User user = users.Find(u => u.username == username && u.password == password);
+            User user = dal.getUserForLogin(username, password);
+            Console.WriteLine(user);
             if (user == null)
             {
                 return Unauthorized();

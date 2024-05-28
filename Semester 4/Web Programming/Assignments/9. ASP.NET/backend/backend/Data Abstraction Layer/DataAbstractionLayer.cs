@@ -146,5 +146,16 @@ namespace backend.Data_Abstraction_Layer
                     return user;
             return null;
         }
+
+        public User getUserForLogin(string username, string password)
+        {
+            if (username == null || password == null)
+                return null;
+            List<User> users = GetUsers();
+            foreach (User user in users)
+                if (user.username == username && user.password == password)
+                    return user;
+            return null;
+        }
     }
 }

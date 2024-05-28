@@ -1,12 +1,15 @@
 <div class="container">
+  
   <button class="logout" (click)="logout()">
     Logout
   </button>
+
   <div class="details">
       <h1>My Users</h1>
       <input type="text" [(ngModel)]="role" (input)="onFilter()" placeholder="Role:">
       <input type="text" [(ngModel)]="name" (input)="onFilter()" placeholder="Name:">
       <button class="add" [routerLink]="['/addUser']" [queryParams]="{role: role, name: name}"> + </button>
+      <button class="add" (click)="clear()"> Clear Filters </button> 
   </div>
   <p>Previous Role Search: {{previousRoleFilter}} </p>
   <table>

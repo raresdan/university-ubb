@@ -24,7 +24,7 @@ export class ShowUsersComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.cookies.get("loggedIn") != "1")
-      this.router.navigate(["login"]);
+      this.router.navigate(["/login"]);
     this.previousRoleFilter = localStorage.getItem('roleFilter') ?? '';
     const previousNameFilter = localStorage.getItem('nameFilter') ?? '';
     this.role = this.previousRoleFilter;
@@ -47,5 +47,13 @@ export class ShowUsersComponent implements OnInit {
   logout() {
     this.cookies.delete('loggedIn');
     this.router.navigate(["/"]);
+  }
+
+  clear() {
+    this.role = '';
+    this.name = '';
+    localStorage.removeItem('roleFilter');
+    localStorage.removeItem('nameFilter');
+    this.loadUsers();
   }
 }
