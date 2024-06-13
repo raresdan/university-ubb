@@ -1,0 +1,128 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.topWrapper h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #007b9d;
+    color: #ffffff;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+button.logout {
+    background-color: #ff4b5c;
+    color: white;
+}
+
+button.logout:hover {
+    background-color: #ff1c2e;
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#errorMsg {
+    color: #ff0000;
+    margin-top: 10px;
+    display: none; /* Initially hidden */
+}
+
+ul {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+ul li button {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul li button:hover {
+    background-color: #d32f2f;
+}
