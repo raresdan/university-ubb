@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\_DOCUMENTE_RARES\\Desktop\\Semester 5\\Parallel and Distributed Programming\\Assignments\\Assignment2\\ProducerConsumerSynchronization\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CDE9FF1F-F04D-4487-BA0A-8472D5656758}|ProducerConsumerSynchronization.vcxproj|D:\\_DOCUMENTE_RARES\\Desktop\\Semester 5\\Parallel and Distributed Programming\\Assignments\\Assignment2\\ProducerConsumerSynchronization\\ProducerConsumerSynchronization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDE9FF1F-F04D-4487-BA0A-8472D5656758}|ProducerConsumerSynchronization.vcxproj|solutionrelative:ProducerConsumerSynchronization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProducerConsumerSynchronization.cpp",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\Semester 5\\Parallel and Distributed Programming\\Assignments\\Assignment2\\ProducerConsumerSynchronization\\ProducerConsumerSynchronization.cpp",
+              "RelativeDocumentMoniker": "ProducerConsumerSynchronization.cpp",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\Semester 5\\Parallel and Distributed Programming\\Assignments\\Assignment2\\ProducerConsumerSynchronization\\ProducerConsumerSynchronization.cpp",
+              "RelativeToolTip": "ProducerConsumerSynchronization.cpp",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAACoAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T10:28:25.744Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

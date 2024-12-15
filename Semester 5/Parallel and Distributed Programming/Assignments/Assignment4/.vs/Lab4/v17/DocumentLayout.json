@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|d:\\_documente_rares\\desktop\\lab4\\lab4\\implementation\\asynctaskmechanism.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|solutionrelative:lab4\\implementation\\asynctaskmechanism.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|d:\\_documente_rares\\desktop\\lab4\\lab4\\implementation\\directcallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|solutionrelative:lab4\\implementation\\directcallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|d:\\_documente_rares\\desktop\\lab4\\lab4\\implementation\\taskmechanism.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|solutionrelative:lab4\\implementation\\taskmechanism.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|d:\\_documente_rares\\desktop\\lab4\\lab4\\model\\stateobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|solutionrelative:lab4\\model\\stateobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|d:\\_documente_rares\\desktop\\lab4\\lab4\\utils\\httputils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|solutionrelative:lab4\\utils\\httputils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|d:\\_documente_rares\\desktop\\lab4\\lab4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2FD3433-8887-4494-AFBD-EBDF60DCE4EF}|Lab4\\Lab4.csproj|solutionrelative:lab4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Program.cs",
+              "RelativeDocumentMoniker": "Lab4\\Program.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Program.cs",
+              "RelativeToolTip": "Lab4\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:19:53.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskMechanism.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Implementation\\TaskMechanism.cs",
+              "RelativeDocumentMoniker": "Lab4\\Implementation\\TaskMechanism.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Implementation\\TaskMechanism.cs",
+              "RelativeToolTip": "Lab4\\Implementation\\TaskMechanism.cs",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAIwKAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:19:53.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DirectCallback.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Implementation\\DirectCallback.cs",
+              "RelativeDocumentMoniker": "Lab4\\Implementation\\DirectCallback.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Implementation\\DirectCallback.cs",
+              "RelativeToolTip": "Lab4\\Implementation\\DirectCallback.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAqwHQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:19:53.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AsyncTaskMechanism.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Implementation\\AsyncTaskMechanism.cs",
+              "RelativeDocumentMoniker": "Lab4\\Implementation\\AsyncTaskMechanism.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Implementation\\AsyncTaskMechanism.cs",
+              "RelativeToolTip": "Lab4\\Implementation\\AsyncTaskMechanism.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAgwB4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:19:53.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StateObject.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Model\\StateObject.cs",
+              "RelativeDocumentMoniker": "Lab4\\Model\\StateObject.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Model\\StateObject.cs",
+              "RelativeToolTip": "Lab4\\Model\\StateObject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:19:53.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HttpUtils.cs",
+              "DocumentMoniker": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Utils\\HttpUtils.cs",
+              "RelativeDocumentMoniker": "Lab4\\Utils\\HttpUtils.cs",
+              "ToolTip": "D:\\_DOCUMENTE_RARES\\Desktop\\Lab4\\Lab4\\Utils\\HttpUtils.cs",
+              "RelativeToolTip": "Lab4\\Utils\\HttpUtils.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:19:53.481Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

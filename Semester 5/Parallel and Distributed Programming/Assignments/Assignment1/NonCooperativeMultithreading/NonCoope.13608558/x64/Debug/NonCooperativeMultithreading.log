@@ -1,0 +1,5 @@
+﻿  NonCooperativeMultithreading.cpp
+D:\_DOCUMENTE_RARES\Desktop\Semester 5\Parallel and Distributed Programming\Assignments\NonCooperativeMultithreading\NonCooperativeMultithreading.cpp(71,62): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\_DOCUMENTE_RARES\Desktop\Semester 5\Parallel and Distributed Programming\Assignments\NonCooperativeMultithreading\NonCooperativeMultithreading.cpp(121,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\_DOCUMENTE_RARES\Desktop\Semester 5\Parallel and Distributed Programming\Assignments\NonCooperativeMultithreading\NonCooperativeMultithreading.cpp(123,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  NonCooperativeMultithreading.vcxproj -> D:\_DOCUMENTE_RARES\Desktop\Semester 5\Parallel and Distributed Programming\Assignments\NonCooperativeMultithreading\x64\Debug\NonCooperativeMultithreading.exe
