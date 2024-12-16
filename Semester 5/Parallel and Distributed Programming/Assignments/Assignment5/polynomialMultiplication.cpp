@@ -9,7 +9,7 @@ const int NAIVE_PAR = 2;
 const int KARATSUBA_SEQ = 3;
 const int KARATSUBA_PAR = 4;
 
-int n, numThreads, algorithm;
+int polynomialDegree, numThreads, algorithm;
 
 std::mutex mtx;
 
@@ -32,7 +32,7 @@ std::vector<int> polynomialMultiplication(const std::vector<int> &firstPolynomia
 void parallelPolynomialMultiplication(int startIndex)
 {
     int currentDegree = startIndex;
-    for (; currentDegree < n; currentDegree += numThreads)
+    for (; currentDegree < polynomialDegree; currentDegree += numThreads)
     {
         // solve for position currDegree
         for (int x = 0; x <= currentDegree; x++)
@@ -41,10 +41,10 @@ void parallelPolynomialMultiplication(int startIndex)
             resultPolynomial[currentDegree] += firstPolynomial[x] * secondPolynomial[y];
         }
     }
-    for (; currentDegree < 2 * n - 1; currentDegree += numThreads)
+    for (; currentDegree < 2 * polynomialDegree - 1; currentDegree += numThreads)
     {
         // solve for position currDegree
-        for (int x = currentDegree - n + 1; x < n; x++)
+        for (int x = currentDegree - polynomialDegree + 1; x < polynomialDegree; x++)
         {
             int y = currentDegree - x;
             resultPolynomial[currentDegree] += firstPolynomial[x] * secondPolynomial[y];
@@ -212,19 +212,19 @@ void printVector(std::vector<int> v)
 void initialiseData()
 {
     std::cout << "Enter size: ";
-    std::cin >> n;
+    std::cin >> polynomialDegree;
     if (algorithm == NAIVE_PAR)
     {
         std::cout << "Enter number of threads: ";
         std::cin >> numThreads;
     }
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < polynomialDegree; ++i)
     {
        firstPolynomial.push_back(1);
        secondPolynomial.push_back(1);
     }
 
-    resultPolynomial.resize(2 * n - 1, 0);
+    resultPolynomial.resize(2 * polynomialDegree - 1, 0);
 }
 
 void solve()
@@ -239,7 +239,7 @@ void solve()
     }
     else if (algorithm == NAIVE_PAR)
     {
-        for (int i = 0; i < std::min(n, numThreads); i++)
+        for (int i = 0; i < std::min(polynomialDegree, numThreads); i++)
         {
             threads.push_back(std::thread(parallelPolynomialMultiplication, i));
         }

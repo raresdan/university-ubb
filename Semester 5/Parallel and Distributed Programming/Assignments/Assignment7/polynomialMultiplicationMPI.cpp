@@ -4,58 +4,58 @@
 #include <cmath>
 
 // Function to multiply two polynomials (O(n^2))
-std::vector<int> polynomialMultiplication(const std::vector<int> &A, const std::vector<int> &B) {
-    int n = A.size(), m = B.size();
+std::vector<int> polynomialMultiplication(const std::vector<int> &firstPolynomial, const std::vector<int> &secondPolynomial) {
+    int n = firstPolynomial.size(), m = secondPolynomial.size();
     std::vector<int> result(n + m - 1, 0);
 
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
-            result[i + j] += A[i] * B[j];
+            result[i + j] += firstPolynomial[i] * secondPolynomial[j];
         }
     }
     return result;
 }
 
 // Function to add two polynomials
-std::vector<int> addPolynomials(const std::vector<int> &A, const std::vector<int> &B) {
-    int n = std::max(A.size(), B.size());
+std::vector<int> addPolynomials(const std::vector<int> &firstPolynomial, const std::vector<int> &secondPolynomial) {
+    int n = std::max(firstPolynomial.size(), secondPolynomial.size());
     std::vector<int> result(n, 0);
 
     for (int i = 0; i < n; ++i) {
-        if (i < A.size()) result[i] += A[i];
-        if (i < B.size()) result[i] += B[i];
+        if (i < firstPolynomial.size()) result[i] += firstPolynomial[i];
+        if (i < secondPolynomial.size()) result[i] += secondPolynomial[i];
     }
     return result;
 }
 
 // Function to subtract two polynomials
-std::vector<int> subtractPolynomials(const std::vector<int> &A, const std::vector<int> &B) {
-    int n = std::max(A.size(), B.size());
+std::vector<int> subtractPolynomials(const std::vector<int> &firstPolynomial, const std::vector<int> &secondPolynomial) {
+    int n = std::max(firstPolynomial.size(), secondPolynomial.size());
     std::vector<int> result(n, 0);
 
     for (int i = 0; i < n; ++i) {
-        if (i < A.size()) result[i] += A[i];
-        if (i < B.size()) result[i] -= B[i];
+        if (i < firstPolynomial.size()) result[i] += firstPolynomial[i];
+        if (i < secondPolynomial.size()) result[i] -= secondPolynomial[i];
     }
     return result;
 }
 
 // Karatsuba algorithm for polynomial multiplication
-std::vector<int> karatsuba(const std::vector<int> &A, const std::vector<int> &B) {
-    int n = std::max(A.size(), B.size());
+std::vector<int> karatsuba(const std::vector<int> &firstPolynomial, const std::vector<int> &secondPolynomial) {
+    int n = std::max(firstPolynomial.size(), secondPolynomial.size());
 
     // Base case: use the naive method
     if (n <= 100) {
-        return polynomialMultiplication(A, B);
+        return polynomialMultiplication(firstPolynomial, secondPolynomial);
     }
 
     int half = n / 2;
 
     // Split polynomials into low and high parts
-    std::vector<int> A_low(A.begin(), A.begin() + std::min(half, (int)A.size()));
-    std::vector<int> A_high(A.begin() + std::min(half, (int)A.size()), A.end());
-    std::vector<int> B_low(B.begin(), B.begin() + std::min(half, (int)B.size()));
-    std::vector<int> B_high(B.begin() + std::min(half, (int)B.size()), B.end());
+    std::vector<int> A_low(firstPolynomial.begin(), firstPolynomial.begin() + std::min(half, (int)firstPolynomial.size()));
+    std::vector<int> A_high(firstPolynomial.begin() + std::min(half, (int)firstPolynomial.size()), firstPolynomial.end());
+    std::vector<int> B_low(secondPolynomial.begin(), secondPolynomial.begin() + std::min(half, (int)secondPolynomial.size()));
+    std::vector<int> B_high(secondPolynomial.begin() + std::min(half, (int)secondPolynomial.size()), secondPolynomial.end());
 
     // Recursive calls
     std::vector<int> z0 = karatsuba(A_low, B_low);
@@ -63,7 +63,7 @@ std::vector<int> karatsuba(const std::vector<int> &A, const std::vector<int> &B)
     std::vector<int> z2 = karatsuba(A_high, B_high);
 
     // Combine results
-    std::vector<int> result(A.size() + B.size() - 1, 0);
+    std::vector<int> result(firstPolynomial.size() + secondPolynomial.size() - 1, 0);
     for (int i = 0; i < z0.size(); ++i) result[i] += z0[i];
     for (int i = 0; i < z1.size(); ++i) result[i + half] += z1[i] - z0[i] - z2[i];
     for (int i = 0; i < z2.size(); ++i) result[i + 2 * half] += z2[i];
@@ -72,20 +72,20 @@ std::vector<int> karatsuba(const std::vector<int> &A, const std::vector<int> &B)
 }
 
 // Distributed polynomial multiplication using MPI
-void mpiPolynomialMultiplication(const std::vector<int> &A, const std::vector<int> &B, std::vector<int> &result, int rank, int size) {
+void mpiPolynomialMultiplication(const std::vector<int> &firstPolynomial, const std::vector<int> &secondPolynomial, std::vector<int> &result, int rank, int size) {
     int n;
 
     // Broadcast polynomial size to all processes
     if (rank == 0) {
-        n = A.size();
+        n = firstPolynomial.size();
     }
     MPI_Bcast(&n, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
     // Adjust input vectors for non-root processes
     std::vector<int> local_A(n, 0), local_B(n, 0);
     if (rank == 0) {
-        local_A = A;
-        local_B = B;
+        local_A = firstPolynomial;
+        local_B = secondPolynomial;
     }
     MPI_Bcast(local_B.data(), n, MPI_INT, 0, MPI_COMM_WORLD);
 
@@ -130,21 +130,21 @@ int main(int argc, char **argv) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    std::vector<int> A, B, result;
+    std::vector<int> firstPolynomial, secondPolynomial, result;
     int n;
 
     if (rank == 0) {
         // Input polynomials at the root process
         std::cout << "Enter the degree of the polynomials: ";
         std::cin >> n;
-        A.resize(n, 1);  // Example: initialize A with ones
-        B.resize(n, 1);  // Example: initialize B with ones
+        firstPolynomial.resize(n, 1);  // Example: initialize firstPolynomial with ones
+        secondPolynomial.resize(n, 1);  // Example: initialize secondPolynomial with ones
     }
 
     double start = MPI_Wtime();
 
     // Perform distributed polynomial multiplication
-    mpiPolynomialMultiplication(A, B, result, rank, size);
+    mpiPolynomialMultiplication(firstPolynomial, secondPolynomial, result, rank, size);
 
     double end = MPI_Wtime();
 
