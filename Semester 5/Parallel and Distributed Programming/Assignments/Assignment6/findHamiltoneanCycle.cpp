@@ -85,64 +85,72 @@ public:
 
 
 std::mutex mutex;
+std::atomic<bool> foundCycle(false);
 
 // Check if a node is already visited
 bool isNodeVisited(int node, const std::vector<int>& path) {
     return std::find(path.begin(), path.end(), node) != path.end();
 }
 
-// Find a Hamiltonian cycle in the graph
+// Find a Hamiltonian cycle
 void findHamiltonianCycle(Graph& graph, int currentNode, std::vector<int> path) {
+    if (foundCycle) return;
+
     if (std::find(graph.getAdjacentNodes(currentNode).begin(), graph.getAdjacentNodes(currentNode).end(), 0) != graph.getAdjacentNodes(currentNode).end() 
         && path.size() == graph.getNumberOfNodes()) {
         std::lock_guard<std::mutex> lock(mutex);
-        path.push_back(0);
-        std::cout << "Found a Hamiltonian cycle: ";
-        for (const auto& node : path) {
-            std::cout << node << " ";
+        if (!foundCycle) {
+            foundCycle = true;
+            path.push_back(0);
+            std::cout << "Found a Hamiltonian cycle: ";
+            for (const auto& node : path) {
+                std::cout << node << " ";
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
         return;
     }
 
-    if (path.size() == graph.getNumberOfNodes()) {
-        return;
-    }
+    if (path.size() == graph.getNumberOfNodes() || foundCycle) return;
 
-    std::vector<int> neighbors = graph.getAdjacentNodes(currentNode);
-    std::vector<std::future<void>> futures;
-
-    for (int neighbor : neighbors) {
+    for (int neighbor : graph.getAdjacentNodes(currentNode)) {
+        if (foundCycle) break;
         if (!isNodeVisited(neighbor, path)) {
             std::vector<int> newPath = path;
             newPath.push_back(neighbor);
-
-            // Launch async tasks instead of raw threads
-            futures.push_back(std::async(std::launch::async, [&graph, neighbor, newPath]() {
-                Graph graphCopy = graph; // Create a copy of the graph for thread safety
-                findHamiltonianCycle(graphCopy, neighbor, newPath);
-            }));
-
-            // Limit the number of concurrent tasks
-            if (futures.size() >= 10) {
-                for (auto& fut : futures) {
-                    fut.get();
-                }
-                futures.clear();
-            }
+            // std::cout << neighbor << std::endl;
+            findHamiltonianCycle(graph, neighbor, newPath);
         }
-    }
-
-    for (auto& fut : futures) {
-        fut.get();
     }
 }
 
-// Start the Hamiltonian cycle search
+// Start Hamiltonian cycle search with threads
 void startHamiltonianCycleSearch(Graph& graph) {
-    std::vector<int> path;
-    path.push_back(0);
-    findHamiltonianCycle(graph, 0, path);
+    int maxThreads = 4
+    ; 
+    std::vector<std::thread> threads;
+    std::vector<int> path = {0};
+
+    for (int neighbor : graph.getAdjacentNodes(0)) {
+        if (foundCycle) break;
+
+        if (threads.size() >= maxThreads) {
+            for (auto& thread : threads) {
+                if (thread.joinable()) thread.join();
+            }
+            threads.clear();
+        }
+
+        threads.emplace_back([&graph, neighbor, path]() {
+            std::vector<int> newPath = path;
+            newPath.push_back(neighbor);
+            findHamiltonianCycle(graph, neighbor, newPath);
+        });
+    }
+
+    for (auto& thread : threads) {
+        if (thread.joinable()) thread.join();
+    }
 }
 
 int main() {
@@ -151,7 +159,7 @@ int main() {
     std::cin >> numNodes;
 
     Graph graph(numNodes);
-    graph.printGraph();
+    // graph.printGraph();
 
     auto start = std::chrono::high_resolution_clock::now();
 
