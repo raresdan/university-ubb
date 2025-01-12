@@ -1,13 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <thread>
-#include <future>
-#include <mutex>
-#include <algorithm>
-#include <limits>
 #include <string>
 #include <sstream>
+#include <cstdlib>
+#include <limits>
+#include <mpi.h>
 
 using namespace std;
 
@@ -18,7 +16,6 @@ struct Pair {
 
   Pair(T1 f, T2 s) : first(f), second(s) {}
 };
-
 
 class Matrix {
 public:
@@ -129,9 +126,6 @@ public:
   }
 };
 
-const int NR_THREADS = 10;
-
-
 Pair<int, Matrix> search(const Matrix& current, int numSteps, int bound) {
   if (numSteps + current.manhattan > bound) {
     return {numSteps + current.manhattan, current};
@@ -160,11 +154,7 @@ Pair<int, Matrix> search(const Matrix& current, int numSteps, int bound) {
   return {minimum, bestSolution};
 }
 
-Pair<int, Matrix> searchParallel(const Matrix& current, int numSteps, int bound, int nrThreads) {
-  if (nrThreads <= 1) {
-    return search(current, numSteps, bound);
-  }
-
+Pair<int, Matrix> searchMPI(const Matrix& current, int numSteps, int bound, int rank, int numProcesses) {
   if (numSteps + current.manhattan > bound) {
     return {numSteps + current.manhattan, current};
   }
@@ -175,19 +165,16 @@ Pair<int, Matrix> searchParallel(const Matrix& current, int numSteps, int bound,
     return {-1, current};
   }
 
-  vector<future<Pair<int, Matrix>>> futures;
   vector<Matrix> moves = current.generateMoves();
-
-  int threadsPerMove = max(1, static_cast<int>(nrThreads / moves.size()));
-  for (const Matrix& next : moves) {
-    futures.push_back(async(launch::async, searchParallel, ref(next), numSteps + 1, bound, threadsPerMove));
-  }
+  int movesPerProcess = (moves.size() + numProcesses - 1) / numProcesses; // Distribute moves across processes
+  int start = rank * movesPerProcess;
+  int end = min((rank + 1) * movesPerProcess, static_cast<int>(moves.size()));
 
   int minimum = numeric_limits<int>::max();
   Matrix bestSolution;
 
-  for (auto& future : futures) {
-    Pair<int, Matrix> result = future.get();
+  for (int i = start; i < end; ++i) {
+    Pair<int, Matrix> result = search(moves[i], numSteps + 1, bound);
     if (result.first == -1) {
       return {-1, result.second};
     }
@@ -197,34 +184,51 @@ Pair<int, Matrix> searchParallel(const Matrix& current, int numSteps, int bound,
     }
   }
 
-  return {minimum, bestSolution};
+  Pair<int, Matrix> result = {minimum, bestSolution};
+  return result;
 }
 
-// Main function
-int main() {
-  Matrix initialState = Matrix::readFromFile("input.in");
+int main(int argc, char* argv[]) {
+  MPI_Init(&argc, &argv);
+
+  int rank, numProcesses;
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  MPI_Comm_size(MPI_COMM_WORLD, &numProcesses);
+
+  Matrix initialState;
+  if (rank == 0) {
+    initialState = Matrix::readFromFile("input.in");
+  }
+
+  MPI_Bcast(&initialState, sizeof(Matrix), MPI_BYTE, 0, MPI_COMM_WORLD);
 
   int minimumBound = initialState.manhattan;
   int distance;
 
   while (true) {
-    auto start = chrono::high_resolution_clock::now();
-    Pair<int, Matrix> solution = searchParallel(initialState, 0, minimumBound, NR_THREADS);
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
+    double startTime = MPI_Wtime();
 
-    distance = solution.first;
+    Pair<int, Matrix> solution = searchMPI(initialState, 0, minimumBound, rank, numProcesses);
 
-    if (distance == -1) {
-      cout << solution.second.numberOfSteps << " steps - " << duration.count() << "ms" << endl;
-      cout << solution.second << endl;
-      break;
-    } else {
-      cout << distance << " steps - " << duration.count() << "ms" << endl;
+    double endTime = MPI_Wtime(); 
+
+    if (rank == 0) {
+      distance = solution.first;
+
+      if (distance == -1) {
+        cout << solution.second.numberOfSteps << " steps - " 
+             << (endTime - startTime) * 1000 << " ms" << endl;
+        cout << solution.second << endl;
+        break; 
+      } else {
+        cout << distance << " steps - " 
+             << (endTime - startTime) * 1000 << " ms" << endl;
+      }
+
+      minimumBound = distance;
     }
-
-    minimumBound = distance;
   }
 
+  MPI_Finalize();
   return 0;
 }

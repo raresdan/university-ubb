@@ -2,6 +2,8 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "mutex": "cpp",
-        "future": "cpp"
-    }
+        "future": "cpp",
+        "limits": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
