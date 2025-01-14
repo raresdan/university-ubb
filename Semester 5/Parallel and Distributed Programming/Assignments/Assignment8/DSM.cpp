@@ -148,8 +148,8 @@ public:
                 std::cout << "Recieved QUIT message (" << rank << " ended)" << std::endl;
                 if (rank == 0) {
                     std::cout << "Final state: " << std::endl;
-                    printState();
                 }
+                printState();
                 break;
             }
 
@@ -259,10 +259,10 @@ void worker(DSM &dsm) {
         dsm.compareAndExchange("a", 33, 420);
         dsm.compareAndExchange("c", 15, 32);
     } else {
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         dsm.subscribe("b");
 
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         dsm.compareAndExchange("b", 50, 100);
 
         std::this_thread::sleep_for(std::chrono::seconds(1));

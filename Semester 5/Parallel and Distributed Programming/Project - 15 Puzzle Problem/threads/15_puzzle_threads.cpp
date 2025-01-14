@@ -129,7 +129,7 @@ public:
   }
 };
 
-const int NR_THREADS = 10;
+const int NR_THREADS = 8;
 
 
 Pair<int, Matrix> search(const Matrix& current, int numSteps, int bound) {
