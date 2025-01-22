@@ -1,0 +1,17 @@
+int num, sum, temp
+string s, s_rev
+num = 56
+sum = 0
+ 
+while num not 0:
+    temp = num mod 10
+    sum = sum + temp
+    num = num div 10
+ 
+s = sum.toString()
+s_rev = string.inverse()
+ 
+if s == s_rev:
+    display("Yes")
+else:
+    display("No")

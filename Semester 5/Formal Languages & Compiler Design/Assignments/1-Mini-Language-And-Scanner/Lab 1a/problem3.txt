@@ -1,0 +1,19 @@
+Check if the sum of digits of N is palindrome
+
+int num, sum, temp
+string s, s_rev
+num = 56
+sum = 0
+ 
+while num not 0:
+    temp = num % 10
+    sum = sum+temp
+    num = num/10
+ 
+s = sum.toString()
+s_rev = string.inverse()
+ 
+if s == s_rev:
+    display("Yes")
+else:
+    display("No")

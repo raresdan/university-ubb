@@ -1,0 +1,12 @@
+int n, largest_prime, i
+n=87
+largest_prime = -1
+    i = 2
+    while i prod i <= n: 
+        while n mod i == 0: 
+            largest_prime = i 
+            n = n div i 
+        i = i + 1
+    if n > 1: 
+        largest_prime = n 
+display(largest_prime)

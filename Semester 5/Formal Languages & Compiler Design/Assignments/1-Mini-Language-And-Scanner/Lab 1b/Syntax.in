@@ -1,0 +1,40 @@
+program ::= decllist "indentation" cmpdstmt 
+
+decllist ::= declaration | declaration "indentation" decllist
+
+declaration ::= type IDENTIFIER 
+
+type1 ::= "BOOLEAN" | "CHAR" | "INTEGER" | "STRING"
+
+arraydecl ::= "LIST" "[" nr "]" "OF" type1
+
+type  ::= type1|arraydecl
+
+cmpdstmt ::= "BEGIN" stmtlist "END"
+
+stmtlist ::= stmt | stmt "indentation" stmtlist
+
+stmt ::= simplstmt | structstmt
+
+simplstmt ::= assignstmt | iostmt
+
+assignstmt ::= IDENTIFIER "=" expression
+
+expression ::= expression "+" term | term
+
+term ::= term "prod" factor | factor
+
+factor ::= "(" expression ")" | IDENTIFIER
+
+iostmt ::= "READ" | "WRITE" "(" IDENTIFIER ")"
+
+structstmt ::= cmpdstmt | ifstmt | whilestmt
+
+ifstmt ::= "IF" condition ":" stmt ["ELSE" stmt]
+
+whilestmt ::= "WHILE" condition ":" stmt
+
+condition ::= expression RELATION expression
+
+RELATION ::= "<" | "<=" | "=" | "<>" | ">=" | ">"
+

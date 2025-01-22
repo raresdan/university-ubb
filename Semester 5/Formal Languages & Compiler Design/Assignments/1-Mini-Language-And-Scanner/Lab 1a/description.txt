@@ -1,0 +1,11 @@
+The Lizard programming language is a Python-like language:
+- type declaration needed
+- indentation matters
+- len(x) -> x.length()
+- print(x) -> display(x)
+- * -> prod
+- % -> mod
+- / -> div
+- != -> not
+- casting like x.toString() or x.toInt()
+- already implemented inverse with .inverse()

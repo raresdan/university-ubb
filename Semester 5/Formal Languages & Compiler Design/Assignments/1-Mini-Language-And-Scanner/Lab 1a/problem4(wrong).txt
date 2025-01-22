@@ -1,0 +1,14 @@
+Sum of numbers from 1 to N which are divisible by 3 or 4
+
+int n
+n = 100  
+sum = 0
+
+for i in range(1, n+1):
+    if i mod 3 == 0 or i mod 4 == 0:
+        sum += i
+print(sum)
+
+
+* sum is not declared
+* print instead of display
