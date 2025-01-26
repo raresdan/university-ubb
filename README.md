@@ -30,3 +30,11 @@
 - 🔧 [Software Engineering](./Semester%204/Software%20Engineering)
 - 👨🏻‍💻 [Systems for Design & Implementation](./Semester%204/Systems%20for%20Design%20&%20Implementation)
 - 🌐 [Web Programming](./Semester%204/Web%20Programming)
+
+## Semester 5
+- ☁️ [Cloud Applications Architecture](./Semester%205/Cloud%20Applications%20Architecture)
+- 🌟 [Designing Innovative Products](./Semester%205/Designing%20Innovative%20Products)
+- 🔤 [Formal Languages & Compiler Design](./Semester%205/Formal%20Languages%20%26%20Compiler%20Design)
+- 🥼 [Intelligent Methods for Problem Solving (Deep Learning)](./Semester%205/Intelligent%20Methods%20for%20Problem%20Solving)
+- 📱 [Mobile Applications](./Semester%205/Mobile%20Applications)
+- 🔀 [Parallel and Distributed Programming](./Semester%205/Parallel%20and%20Distributed%20Programming)
