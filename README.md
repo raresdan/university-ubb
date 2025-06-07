@@ -38,3 +38,9 @@
 - 🥼 [Intelligent Methods for Problem Solving (Deep Learning)](./Semester%205/Intelligent%20Methods%20for%20Problem%20Solving)
 - 📱 [Mobile Applications](./Semester%205/Mobile%20Applications)
 - 🔀 [Parallel and Distributed Programming](./Semester%205/Parallel%20and%20Distributed%20Programming)
+
+## Semester 6
+- 🌍 [AI for Climate Change](./Semester%206/AI%20for%20Climate%20Change)
+- 🦙 [Large Language Models](./Semester%206/Large%20Language%20Models)
+- 🗣️ [Natural Language Processing](./Semester%206/Natural%20Language%20Processing)
+- 🔢 [Numeric Calculus](./Semester%206/Numeric%20Calculus)
